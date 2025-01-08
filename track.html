@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #1e1e1e;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            transform: translateY(50px);
+            animation: slideUp 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #ffffff;
+        }
+
+        input {
+            padding: 15px;
+            width: calc(100% - 30px);
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: #2a2a2a;
+            color: #ffffff;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #fff;
+            background-color: #333;
+        }
+
+        button {
+            padding: 10px 1px;
+            background-color: #fff;
+            color: black;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 90%;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #eeeeee;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            background-color: #eeeeee;
+            transform: translateY(0);
+        }
+
+        #status {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #bbbbbb;
+            opacity: 0;
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        #status.show {
+            opacity: 1;
+            transform: translateY(10px);
+        }
+
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #000;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ادخل كود التحقق</h1>
+        <input type="text" id="trackingCode" placeholder="">
+        <button onclick="trackShipment()">التحقق</button>
+        <div id="status"></div>
+        <div class="loader" id="loader" style="display: none;"></div>
+    </div>
+    <script>
+        function trackShipment() {
+            const trackingCode = document.getElementById('trackingCode').value;
+            const statusDiv = document.getElementById('status');
+            const loader = document.getElementById('loader');
+
+            statusDiv.innerHTML = '';
+            loader.style.display = 'block';
+            statusDiv.classList.remove('show');
+
+            // Simulate an async operation (e.g., API call)
+            setTimeout(() => {
+                loader.style.display = 'none';
+                if (trackingCode === 'MJeG8PTMzbHQ') {
+                    statusDiv.innerHTML = '<p class="fade-in">اسم المنتج : Mac mini M4 </br> الحالة : تم الشراء، سيتم ارساله غداً </br> اخر تحديث : 2025/1/9 </p>';
+                } else {
+                    statusDiv.innerHTML = '<p class="fade-in">هذا الكود غير مسجل، اذا كنت حاجز يرجى التواصل لانشاء كود تتبع خاص بك</p>';
+                }
+                statusDiv.classList.add('show');
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
