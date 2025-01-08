@@ -1,177 +1,217 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
- <style>
-@keyframes my-animation {
-    0% { opacity: 0; transform: translateY(-20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-</style>
-
-  
   <title>نبذة</title>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+    
+   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swa"
+    rel="stylesheet">
+    
   <style>
-    * {
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #222222;
+      color: #000;
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      transition: background-color 0.3s ease;
     }
 
-    body {
-      background-color: #1a1a1a; /* Lighter background */
-      color: #0056b3; /* Darker text color */
-      font-family: 'IBM Plex Sans Arabic', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      gap: 2rem;
-      padding: 1rem;
-      --primary-blue: #90d5ff;
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
     }
 
     h1 {
-    animation: my-animation 2s ease-in-out; 
-      color: #90d5ff;
+      font-family: 'Roboto Mono', sans-serif;
+      font-style: bold;
+      font-size: 3.5rem;
+      font-weight: 700;
       text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      font-weight: 600;
+      margin-bottom: 3rem;
+      color: #fff;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-image: linear-gradient(to right, #4285f4, #181818, #fff, #000);
+      animation: fadeIn 4s ease;
     }
 
-    main {
+    h2 {
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 2rem;
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #eee;
+      animation: fadeIn 1s ease;
+    }
+
+    a {
+      color: #4285f4;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #3367d6;
+    }
+
+    .price-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      width: 90%;
-      max-width: 1200px;
+      gap: 2rem;
     }
 
     .price-card {
-    animation: my-animation 1s ease-in-out; 
-      background: #2d2d2d;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Lighter shadow */
-      text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background-color: #181818;
+      border-radius: 16px;
       overflow: hidden;
-      position: relative;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 0.8s ease;
+      display: flex;
+      flex-direction: column;
     }
 
-    
-
-    .price-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom right, rgba(66, 133, 244, 0.2), rgba(66, 133, 244, 0));
-      opacity: 0;
-      transition: opacity 0.2s ease;
-      z-index: -1;
-    }
-
-    .price-card:hover::before {
-      opacity: 1;
+    .price-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
     }
 
     .product-name {
-      color: #ffffff;
+      color: #fff;
       font-size: 1.6rem;
+      font-weight: 700;
       margin-bottom: 1rem;
-      font-weight: 500;
+      padding: 1rem 2rem;
+      background: linear-gradient(to right, #, #fff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
 
     .status-badge {
-      background-color: var(--primary-blue);
-      color: #000000;
-      padding: 0.3rem 1rem;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      margin-top: 0.8rem;
+      background-color: #4285f4;
+      color: #fff;
+      padding: 0.4rem 1.2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin: 0 auto 1.5rem auto;
       display: inline-block;
-      font-weight: 500;
+      text-transform: uppercase;
+      font-weight: 600;
     }
 
     .specs {
-      color: #ffffff;
+      color: #eee;
       font-size: 1rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.4;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+      padding: 0 2rem;
+      flex-grow: 1;
     }
 
     .price {
-      color: #ffffff;
-      font-size: 2rem;
+      color: #fff;
+      font-size: 2.2rem;
       font-weight: bold;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
+      margin-bottom: 2rem;
     }
 
     .price span.currency {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       color: #90d5ff;
     }
 
     .note {
-      background: #2d2d2d;
-      border-radius: 12px;
+      background: #181818;
+      border-radius: 16px;
       padding: 2rem;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      width: 90%;
-      max-width: 800px;
-      margin-top: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      margin-top: 4rem;
+      animation: fadeIn 1s ease;
+    }
+
+    .note-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .note-item {
       text-align: center;
+      width: 100%;
     }
 
     .note-title {
-      color: #ffffff;
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
     }
 
     .note-text {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #ffffff;
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #eee;
     }
 
-    .datetime {
-      color: #5f6368;
-      font-size: 1rem;
-      text-align: center;
-      margin-bottom: 1rem;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
-    @media (max-width: 600px) {
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+
       h1 {
+        font-size: 2.8rem;
+      }
+
+      h2 {
         font-size: 1.8rem;
       }
 
-      .price-card {
-        padding: 1.5rem;
+      p {
+        font-size: 1.1rem;
       }
 
-      .product-name {
-        font-size: 1.4rem;
-      }
-
-      .specs {
-        font-size: 0.9rem;
-      }
-
-      .price {
-        font-size: 1.8rem;
+      .price-grid {
+        grid-template-columns: 1fr;
       }
 
       .note {
@@ -179,90 +219,68 @@
       }
 
       .note-title {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
       }
 
       .note-text {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
     }
   </style>
 </head>
+
 <body>
-  <div class="datetime" id="datetime"></div>
-  <h1>[ نبذة عن اسعاري ]</h1>
+  <div class="container">
+    <h1>UpTime ✨</h1>
 
-  <main class="price-grid">
-    <article class="price-card">
-      <div class="product-name">
-        MACBOOK PRO M4 14
-      </br>  <span class="status-badge">Basic</span>
-      </div>
-      <div class="specs">16GB RAM • 512GB SSD</div>
-      <div class="price">
-        <span>2,000,000</span>
-        <span class="currency">د.ع</span>
-      </div>
-    </article>
+    <main class="price-grid">
+      <article class="price-card">
+        <div class="product-name">MACBOOK PRO M4 14<br> </div>
+        <div class="specs">16GB RAM • 512GB SSD</div>
+        <div class="price"><span>2,000,000</span> <span class="currency">د.ع</span></div>
+      </article>
 
-    <article class="price-card">
-      <div class="product-name">
-        MACBOOK M4 MAX 14
-        </br> <span class="status-badge">Max</span>
-      </div>
-      <div class="specs">36GB RAM • 1TB SSD </div>
-      <div class="price">
-        <span>4,000,000</span>
-        <span class="currency">د.ع</span>
-      </div>
-    </article>
+      <article class="price-card">
+        <div class="product-name">MACBOOK M4 MAX 14<br> </div>
+        <div class="specs">36GB RAM • 1TB SSD</div>
+        <div class="price"><span>4,000,000</span> <span class="currency">د.ع</span></div>
+      </article>
 
-    <article class="price-card">
-      <div class="product-name">
-        MAC MINI M4
-      </br>  <span class="status-badge">Basic</span>
-      </div>
-      <div class="specs">أداء مثالي • تصميم أنيق</div>
-      <div class="price">
-        <span>800,000</span>
-        <span class="currency">د.ع</span>
-      </div>
-    </article>
+      <article class="price-card">
+        <div class="product-name">MAC MINI M4<br> </div>
+        <div class="specs">16GB RAM • 256GB SSD</div>
+        <div class="price"><span>800,000</span> <span class="currency">د.ع</span></div>
+      </article>
 
-    <article class="price-card">
-      <div class="product-name">
-        MSI TITAN 18 HX
-     </br>   <span class="status-badge">Gaming</span>
-      </div>
-      <div class="specs">128GB RAM • 4TB SSD • RTX 4090</div>
-      <div class="price">
-        <span>6,700,000</span>
-        <span class="currency">د.ع</span>
-      </div>
-    </article>
+      <article class="price-card">
+        <div class="product-name">MSI TITAN 18 HX<br> </div>
+        <div class="specs">128GB RAM • 4TB SSD • RTX 4090</div>
+        <div class="price"><span>6,700,000</span> <span class="currency">د.ع</span></div>
+      </article>
 
-    <article class="price-card">
-      <div class="product-name">
-        ASUS ROG SCAR 17X3D
-    </br>    <span class="status-badge">Gaming</span>
-      </div>
-      <div class="specs">RTX 4090 • RYZEN 9 7945X3D </div>
-      <div class="price">
-        <span>4,175,000</span>
-        <span class="currency">د.ع</span>
-      </div>
-    </article>
-  </main>
+      <article class="price-card">
+        <div class="product-name">ASUS ROG SCAR 17X3D<br> </div>
+        <div class="specs">RTX 4090 • RYZEN 9 7945X3D</div>
+        <div class="price"><span>4,175,000</span> <span class="currency">د.ع</span></div>
+      </article>
+    </main>
 
-  <aside class="note">
-    <div class="note-content">
-      <div class="note-title">اكدر!</div>
-      <p class="note-text">اقدملك طلب جهاز بمواصفات مخصصة من Apple وجميع المواقع العالمية المعتمدة</p>
-    </div>
-  </aside>
+    <aside class="note">
+      <div class="note-container">
+        <div class="note-item">
+          <h2 class="note-title">اكدر!</h2>
+          <p class="note-text">اقدملك طلب جهاز بمواصفات مخصصة من Apple وجميع المواقع العالمية المعتمدة</p>
+        </div>
+     
+      </div>
+    </aside>
 
-  <script>
-   
-  </script>
+    <footer>
+        <div class="note-item">
+          <a href="https://uptimeser.github.io/" class="note-title">رجوع</a>
+        </div>
+    </footer>
+  </div>
 </body>
+
 </html>
