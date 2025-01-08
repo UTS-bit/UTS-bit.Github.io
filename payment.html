@@ -1,148 +1,166 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Information</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>معلومات الحجز</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" rel="stylesheet" rel="stylesheet');
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap');
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'IBM Plex Sans Arabic', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Cairo', sans-serif;
         }
 
         body {
-    background-color: #1a1a1a; /* Dark container background */
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            width: 100%;
-            max-width: 500px;
-            padding: 30px;
+            background-color: #121212;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            color: #eee;
         }
 
         .container {
-            background-color: #2d2d2d; /* Dark container background */
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            width: 100%;
-            max-width: 500px;
-            padding: 30px;
+            background-color: #1e1e1e;
+            border-radius: 16px; 
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+            width: 90%;
+            max-width: 600px;
+            padding: 40px; 
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .header-image {
             width: 100%;
-            height: 200px;
+            height: 220px; 
             object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 25px;
+            border-radius: 16px;
+            margin-bottom: 30px; 
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden; 
+        }
+
+        .header-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease; 
+        }
+
+        .header-image:hover img {
+            transform: scale(1.05);
         }
 
         .title {
-            color: #ffffff; /* Light text for dark background */
-            font-size: 24px;
-            margin-bottom: 20px;
+            color: #eee;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 30px;
             text-align: center;
         }
 
         .info-box {
-            background-color: #363636; /* Darker info box */
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
+            background-color: #242424;
+            border: none;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease-in-out;
         }
 
         .info-title {
-            color: #ffffff; /* Light text */
-            font-size: 18px;
-            margin-bottom: 10px;
+            color: #eee;
+            font-size: 22px;
             font-weight: 600;
+            margin-bottom: 20px;
         }
 
         .info-text {
-            color: #b3b3b3; /* Lighter gray for better readability */
-            line-height: 1.6;
-            margin-bottom: 15px;
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 20px;
         }
 
         .payment-steps {
             list-style: none;
+            counter-reset: step-counter;
+            padding-right: 20px; 
         }
 
         .payment-steps li {
             margin-bottom: 15px;
-            padding-left: 25px;
+            padding-right: 35px;
             position: relative;
-            color: #b3b3b3; /* Lighter gray for better readability */
+            color: #ccc;
         }
 
-        .payment-steps li:before {
-            content: "●";
-            color: #90d5ff; /* Keeping the accent color for visual interest */
+        .payment-steps li::before {
+            counter-increment: step-counter;
+            content: counter(step-counter) ".";
+            color: #4285f4; 
+            font-weight: bold;
             position: absolute;
-            left: 0;
+            right: 0; 
+            top: 2px;
         }
 
         .note {
-            font-size: 14px;
-            color: #808080; /* Subtle gray for the note */
+            font-size: 15px;
+            color: #aaa;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 30px;
+            line-height: 1.7;
         }
 
-        @media (max-width: 480px) {
-            .container {
-                padding: 20px;
-            }
-
-            .title {
-                font-size: 20px;
-            }
-
-            .info-title {
-                font-size: 16px;
-            }
+        .info-box:hover {
+            background-color: #333;
+            transform: translateY(-3px);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="https://i.imgur.com/657Lyn8.jpeg" alt="Header Image" class="header-image">
-        
+        <div class="header-image">
+            <img src="https://i.imgur.com/657Lyn8.jpeg" alt="Header Image">
+        </div>
         <h1 class="title">معلومات الحجز</h1>
 
         <div class="info-box">
             <h2 class="info-title">ملاحظات قبل الطلب</h2>
-            <p class="info-text"></p>
-            
             <ul class="payment-steps">
-                <li>الضمان لا يشمل سوء الاستخدام من طرفك الا اذا كانت الشركة المصنعة توفر تصليح مجاني او مخفض هنا انت تحدد يتصلح او لا</li>
-                 <li>معلومات طلبك راح توصلك اول باول بدون ماتسال او تتعب نفسك</li>
-                 
-                 
-                
+                <li>الضمان لا يشمل سوء الاستخدام من طرفك إلا إذا كانت الشركة المصنعة توفر تصليح مجاني أو مخفض. 
+                    هنا أنت تحدد يتصلح أو لا.</li>
+                <li>معلومات طلبك راح توصلك أول بأول بدون ما تسأل أو تتعب نفسك.</li>
             </ul>
         </div>
 
         <div class="info-box">
             <h2 class="info-title">طريقة الحجز</h2>
-            <p class="info-text"></p>
             <ul class="payment-steps">
-                <li>دفع 25% من المبلغ الكلي للمنتج</li>
-                <li></li>
-                <li>المبلغ غير قابل للارجاع الا في بعض الحالات المذكورة سابقاً</li>
-                <li>العربون ثابت واجباري غير قابل للتغير او المناقشة باي شكل من الاشكال</li>
-                <li>طرق الدفع حاليا ماستر رافدين فقط</li>
+                <li>دفع 25% من المبلغ الكلي للمنتج كعربون.</li>
+                <li>المبلغ غير قابل للإرجاع إلا في بعض الحالات المذكورة سابقاً.</li>
+                <li>العربون ثابت وإجباري غير قابل للتغيير أو المناقشة بأي شكل من الأشكال.</li>
+                <li>طرق الدفع حالياً ماستر رافدين فقط.</li>
             </ul>
         </div>
 
-        <p class="note">منشور الثقة موجود وايضا تكدر تقابلني او تجيني للبيت اذا كنت من اربيل</p>
-        
-             <p class="note"></p>
-             
-        <p class="note"></p>
-        
-        
+        <p class="note">منشور الثقة موجود وأيضاً تكدر تقابلني أو تجيني للبيت إذا كنت من أربيل.</p>
+    </div>
 </body>
 </html>
