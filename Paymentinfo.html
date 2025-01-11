@@ -8,14 +8,14 @@
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap');
 
         * {
-            margin: 0;
-            padding: 0;
+            margin: 25;
+            padding: 25;
             box-sizing: border-box;
             font-family: 'Cairo', sans-serif;
         }
 
         body {
-            background-color: #121212;
+            background-color: #181818;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -25,14 +25,29 @@
         }
 
         .container {
-            background-color: #1e1e1e;
-            border-radius: 16px; 
+            background-color: #101010;
+            border-radius: 20px; 
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
             width: 90%;
             max-width: 600px;
             padding: 40px; 
-            animation: fadeIn 0.5s ease-in-out;
+            animation: fadeIn 2s ease-in-out;
         }
+        
+        
+
+@keyframes shimmeringEntrance {
+  0% {
+    filter: brightness(0.5) blur(5px); /* Start dim and blurred */
+    opacity: 0;
+  }
+  100% {
+    filter: brightness(1) blur(0); /* Transition to full brightness and sharpness */
+    opacity: 1;
+  }
+}
+
+
 
         @keyframes fadeIn {
             from {
@@ -44,8 +59,15 @@
                 transform: translateY(0);
             }
         }
+        
+
+
+
+        
+        
 
         .header-image {
+        animation: shimmeringEntrance 3s ease-in-out forwards;
             width: 100%;
             height: 220px; 
             object-fit: cover;
@@ -75,12 +97,15 @@
         }
 
         .info-box {
-            background-color: #242424;
-            border: none;
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background-color: #101010;
+          outline: #fff;
+           border-color: #fff;
+            border: #fff;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+  border: 1px rgba(55, 54, 78, 1);
+            
             transition: all 0.2s ease-in-out;
         }
 
@@ -131,10 +156,22 @@
             background-image:
             linear-gradient(to right, #4285f4, #4285f4, #4285f4, #4285f4);
         }
+        
+        .borr {
+            font-size: 16px;
+            color: #4285f4;
+            text-align: center;
+            margin-top: 30px;
+            line-height: 1.7;
+            -webkit-background-clip: text;
+      color: transparent;
+            background-image:
+            linear-gradient(to right, #4285f4, #4285f4, #4285f4, #4285f4);
+        }
 
         .info-box:hover {
-            background-color: #333;
-            transform: translateY(-3px);
+            background-color: #101010;
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -151,9 +188,11 @@
                 <li>الضمان لا يشمل سوء الاستخدام من طرفك إلا إذا كانت الشركة المصنعة توفر تصليح مجاني أو مخفض. 
                     هنا أنت تحدد يتصلح أو لا.</li>
                 <li>  معلومات طلبك راح توصلك على شكل كود تتبع يتحدث بشكل شبه يومي.</li>
+                
+                
             </ul>
         </div>
-
+<p class="borr"></br>➖➖➖➖➖➖➖➖➖➖➖</p>
         <div class="info-box">
             <h2 class="info-title">طريقة الحجز</h2>
             <ul class="payment-steps">
@@ -161,8 +200,7 @@
                 <li>المبلغ غير قابل للإرجاع إلا في بعض الحالات المذكورة سابقاً.</li>
                 <li>العربون ثابت وإجباري غير قابل للتغيير أو المناقشة بأي شكل من الأشكال.</li>
                 <li>طرق الدفع حالياً ماستر رافدين فقط.</li>
-                <p class="note">-----------------------</br></br></p>
-                <p>واذا ماكنت تمتلك رافدين، تكدر تشوف وكيل لبطاقتك ورافدين بنفس الوقت راح يستلم منك ويحولي رافدين</p>
+                <p></br>واذا ماكنت تمتلك رافدين، تكدر تشوف وكيل لبطاقتك ورافدين بنفس الوقت راح يستلم منك ويحولي رافدين</p>
             </ul>
         </div>
 
