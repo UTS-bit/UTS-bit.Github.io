@@ -1,410 +1,401 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>خدمات الشراء والشحن</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swa"
-    rel="stylesheet">
-  
-  <style>
-    body {
-      font-family: 'Cairo', sans-serif;
-      background-color: #121212;
-      color: #eee;
-      margin: 0;
-      transition: background-color 0.3s ease;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمات الشراء والشحن</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #e1cbbd;
+            --bg: #0f1523;
+            --text: #ffffff;
+            --card: #1d2339;
+            --border: #202124;
+            --accent: #202124;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.9s ease; /* Smooth transitions */
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            animation: fadeIn 0.8s ease-in; /* Fade-in animation */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+        h1:hover {
+            transform: scale(1.02);
+            text-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
+        }
+        /* Quick Actions */
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .action-card {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.9s ease;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--text);
+            animation: slideUp 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+        .action-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+        .action-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .action-card:nth-child(1) { animation-delay: 0.2s; }
+        .action-card:nth-child(2) { animation-delay: 0.4s; }
+        .action-card:nth-child(3) { animation-delay: 0.6s; }
+        
+        /* Click animations */
+        .action-card:active {
+            animation: scaleBounce 0.4s ease-out;
+        }
+        .action-card:nth-child(2):active {
+            animation: rotate 0.4s ease-out;
+        }
+        .action-card:nth-child(3):active {
+            animation: shadowPulse 0.4s ease-out;
+        }
 
-    .container {
-      max-width: 768px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    
-        h9 {
-      font-family: 'Roboto Mono', sans-serif;
-      font-style: normal;
-      font-size: 3.5rem;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 10rem;
-      color: #fff;
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      background-image: linear-gradient(to right, #4285f4, #181818, #fff, #000);
-      animation: fadeIn 4s ease;
-    }
-    
-
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 1rem;
-      color: #fff;
-      animation: fadeIn 1s ease;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      color: #fff;
-      margin-bottom: 1rem;
-      animation: fadeIn 1s ease;
-    }
-
-    p {
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 1.2rem;
-      text-align: center;
-      animation: fadeIn 1s ease;
-    }
-
-    a {
-      color: #4285f4;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: #3367d6;
-    }
-
-    .search-container {
-    font-family: 'Cairo', sans-serif;
-      background-color: #202124;
-      border-radius: 24px;
-      padding: 10px 20px;
-      margin-bottom: 2rem;
-      display: flex;
-      align-items: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-      transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
-      position: relative;
-    }
-
-    .search-container:hover {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-      transform: translateY(-2px);
-    }
-
-    .search-container input[type="text"] {
-      font-family: 'Cairo', sans-serif;
-      background-color: transparent;
-      border: none;
-      outline: none;
-      color: #eee;
-      flex-grow: 1;
-      padding: 8px;
-      margin-right: 10px;
-      transition: background-color 1s ease;
-    }
-
-    .search-container input[type="text"]:focus {
-      background-color: #28292c; /* Subtle background on focus */
-    }
-
-    .search-container button {
-      background-color: transparent;
-      border: none;
-      color: #eee;
-      cursor: pointer;
-      padding: 0;
-      transition: transform 0.3s ease;
-    }
-
-    .search-container button:hover {
-      transform: scale(1.1);
-    }
-
-    .search-container button i {
-      font-size: 1.2rem;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background-color: #4285f4;
-      color: #fff;
-      padding: 1rem 2rem;
-      text-decoration: none;
-      border: none;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 1.2rem;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      cursor: pointer;
-    }
-
-    .cta-button:hover {
-      background-color: #3367d6;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      transform: translateY(-2px);
-    }
-
-    .faq-section {
-      background-color: #202124;
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
-      animation: fadeIn 1s ease;
-    }
-    
-    .faq-s1 {
-      background-color: #202124;
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
-      animation: fadeIn 1s ease;
-    }
-
-    .faq-question {
-      margin-bottom: 1.5rem;
-      cursor: pointer;
-      border-bottom: 1px solid #333;
-      padding-bottom: 1rem;
-    }
-
-    .faq-question h3 {
-      color: #eee;
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-    }
-
-    .faq-question h3 i {
-      font-size: 1rem;
-      margin-right: 0.5rem;
-      transition: transform 0.3s ease;
-    }
-
-    .faq-question.active h3 i {
-      transform: rotate(180deg);
-    }
-
-    .faq-answer {
-      display: none;
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-      animation: slideDown 1s ease;
-    }
-
-    .faq-question.active .faq-answer {
-      display: block;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 2rem;
-      color: #999;
-      animation: fadeIn 1s ease;
-    }
-
-    /* Keyframes for animations */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .search-suggestions {
-      display: none;
-      position: absolute;
-      top: calc(100% + 5px);
-      left: 20px;
-      right: 20px;
-      background-color: #202124;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-      z-index: 10;
-      overflow: hidden; 
-    }
-
-    .search-suggestions.active {
-      display: block;
-      animation: scaleDown 0.5s ease;
-    }
-
-    .search-suggestion {
-      padding: 8px 12px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      display: flex; /* Use flexbox for alignment */
-      align-items: center; /* Align items vertically */
-    }
-
-    .search-suggestion:hover {
-      background-color: #28292c;
-    }
-
-    .search-suggestion i {
-      font-size: 1rem;
-      margin-left: 10px; /* Add some space between icon and text */
-      color: #4285f4; /* Google blue for icons */
-    }
-
-    @keyframes scaleDown {
-      from {
-        opacity: 0;
-        transform: translateY(-10px) scale(0.95);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-  </style>
+        /* Exchange Rate */
+        .exchange-rate {
+            background: ;
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+            
+        }
+        .rate-value {
+            font-size: 1.5rem;
+            color: #e1cbbd;
+            font-weight: bold;
+        }
+        /* FAQ Section */
+        .faq-section {
+            background: var(--card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+        .faq-section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .faq-question {
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-question:last-child {
+            border-bottom: none;
+        }
+        .faq-question button {
+            width: 100%;
+            padding: 1.5rem;
+            text-align: right;
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text);
+        }
+        .faq-question button:hover {
+            background: #282c34;
+        }
+        .faq-question button i {
+            transition: transform 0.3s ease;
+        }
+        .faq-question.active button i {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.5s ease;
+            background: #282c34;
+        }
+        .faq-question.active .faq-answer {
+            padding: 1rem 1.5rem;
+            max-height: 500px;
+        }
+        /* Contact Section */
+        .contact-section {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+        .contact-method {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin: 0.5rem;
+            background: #202124;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            transition: background 0.2s ease;
+        }
+        .contact-method:hover {
+            background: #282c34;
+        }
+        .contact-method i {
+            transition: transform 0.3s ease;
+        }
+        .contact-method:hover i {
+            transform: scale(1.2);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #e1cbbd;
+        }
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        /* Define the animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        @keyframes scaleBounce {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(10deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+        @keyframes shadowPulse {
+            0% {
+                box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h9>UpTime ✨</h9>
-    <p>افضل خدمة مع افضل ضمانات مقدمة. 
-    
-    </br>
-    
-    
-    </p>
-
-    <div class="search-container">
-      <input type="text" id="search-input" placeholder="ابحث ..." aria-label="Search for products or services">
-      <button aria-label="Search button"><i class="fas fa-search"></i></button>
-      <div class="search-suggestions" id="search-suggestions">
-        <div class="search-suggestion" data-search-term="بعض الاسعار"><i class="fas fa-tags"></i> بعض الاسعار</div>
-        <div class="search-suggestion" data-search-term="الحجز"><i class="fas fa-credit-card"></i> الحجز</div>
-        
-        <div class="search-suggestion" data-search-term="تتبع الشحنة"><i class="fas fa-tags"></i>تتبع الشحنة</div>
-        
-      </div>
+    <div class="container">
+        <header class="header">
+            <h1>/!\</h1>
+            <p>افضل خدمة مع افضل ضمانات مقدمة</p>
+        </header>
+        <div class="quick-actions">
+            <a href="https://uptimeser.github.io/prices" class="action-card">
+                <i class="fas fa-tags"></i>
+                <h3>الأسعار</h3>
+                <p>اسعار بعض المنتجات المختلفة</p>
+            </a>
+            <a href="https://uptimeser.github.io/Paymentinfo" class="action-card">
+                <i class="fas fa-credit-card"></i>
+                <h3>الحجز</h3>
+                <p>جميع تفاصيل الحجز</p>
+            </a>
+            <a href="https://uptimeser.github.io/track" class="action-card">
+                <i class="fas fa-shipping-fast"></i>
+                <h3>تتبع الشحنة</h3>
+                <p>تتبع الشحنة بعد الحجز</p>
+            </a>
+        </div>
+        <div class="exchange-rate">
+            <h3>سعر صرف الدولار</h3>
+            <p class="rate-value">1320 دينار</p>
+        </div>
+        <div class="faq-section">
+            <div class="faq-question">
+                <button> شنو تفاصيل الشحن؟ <i class="fas fa-chevron-down"></i> </button>
+                <div class="faq-answer">
+                    <p>• وصول المنتج بمدة لا تتجاوز 25 يوم</p>
+                    <p>• اسعار الشحن رسمية وثابتة غير قابلة للتغيير باي شكل من الاشكال</p>
+                </div>
+            </div>
+            <div class="faq-question">
+                <button> شنو الضمانات المقدمة؟ <i class="fas fa-chevron-down"></i> </button>
+                <div class="faq-answer">
+                    <p>• استرجاع كامل المبلغ في حال تجاوز وقت التوصيل 30 يوم</p>
+                    <p>• حق الارجاع او الاستبدال في حال وجود ضرر واضح بالتغليف او علبة المنتج</p>
+                    <p>• تكفل كافة تكاليف الارجاع والشحن في حال وجود خلل مصنعي</p>
+                    <p>• ضمان حسب الشركة المصنعة للجهاز</p>
+                </div>
+            </div>
+            <div class="faq-question">
+                <button> شنو تفاصيل الخدمة؟ <i class="fas fa-chevron-down"></i> </button>
+                <div class="faq-answer">
+                    <p>خدمة مستقلة غير تابعة لاي تطبيق او موقع، امكانية الوصول والشحن من اي موقع على الانترنت حتى اذا ماكان يدعم الشحن للشركات او المستودعات بشكل عام.</p>
+                </div>
+            </div>
+        </div>
+        <div class="contact-section">
+            <h3>تواصل وياي</h3>
+            <div style="margin-top: 1rem;">
+                <a href="https://wa.me/9647874905852" class="contact-method">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://t.me/Huddayfah" class="contact-method">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100092379832362&mibextid=ZbWKwL" class="contact-method">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+            </div>
+        </div>
+        <footer>
+            <p>جميع الحقوق غير محفوظة :( UpTime</p>
+        </footer>
     </div>
+    <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        const searchInput = document.getElementById('search-input');
+        const searchSuggestions = document.getElementById('search-suggestions');
+        const searchSuggestionsItems = document.querySelectorAll('.search-suggestion');
 
-    <p>شحن سريع وموثوق من جميع أنحاء العالم.</p>
-    <p>سعر صرف الدولار: <span style="color: #4285f4;">1320 دينار</span>.</p>
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                question.classList.toggle('active');
+            });
+        });
 
-    <div class="faq-section">
-      <h2>الاسئلة والاجوبة</h2>
-      <div class="faq-question">
-        <h3><i class="fas fa-plus"></i>شنو تفاصيل الشحن؟</h3>
-        <div class="faq-answer">
-          <p>• وصول المنتج بمدة لا تتجاوز 25 يوم</p>
-           <p>• اسعار الشحن رسمية وثابتة غير قابلة للتغيير باي شكل من الاشكال</p>
-           
-            <p> </p>
-        </div>
-      </div>
-      <div class="faq-question">
-        <h3><i class="fas fa-plus"></i>شنو الضمانات المقدمة؟</h3>
-        <div class="faq-answer">
-          <p>• استرجاع كامل المبلغ في حال تجاوز وقت التوصيل 30 يوم</p>
-       
-       <p>• حق الارجاع او الاستبدال في حال وجود ضرر واضح بالتغليف او علبة المنتج</p>
-       
-          <p>• تكفل كافة تكاليف الارجاع والشحن في حال وجود خلل مصنعي (نسبة الخلل المصنعي اقل من 1%)</p>
-          
-           <p>• ضمان حسب الشركة المصنعة للجهاز (سنة كاملة من تاريخ استلام الجهاز او اكثر)</p>
-       
-       
-        </div>
-      </div>
-      <div class="faq-question">
-        <h3><i class="fas fa-plus"></i>شنو تفاصيل الخدمة؟ </h3>
-        <div class="faq-answer">
-          <p>خدمة مستقلة غير تابعة لاي تطبيق او موقع، امكانية الوصول والشحن من اي موقع على الانترنت حتى اذا ماكان يدعم الشحن للشركات او المستودعات بشكل عام.</p>
-        </div>
-        </div>
-        
-      <div class="faq-question">
-        <h3><i class="fas fa-plus"></i>شلون ممكن اتواصل وياك؟</h3>
-        <div class="faq-answer">
-          <p>• WhatsApp 07874905852</p>
-           <p>• Telegram @Huddayfah</p>
-           <p>• Facebook Huddayfah Makki</p>
-           
-            <p> </p>
-        </div>
-      </div>
-        
-      </div>
-        
-        
-      </div>
-    </div>
+        // Show suggestions when search bar is clicked
+        searchInput.addEventListener('click', () => {
+            searchSuggestions.classList.add('active');
+        });
 
+        // Hide suggestions when clicking outside the search area
+        document.addEventListener('click', (event) => {
+            if (!searchInput.contains(event.target) && !searchSuggestions.contains(event.target)) {
+                searchSuggestions.classList.remove('active');
+            }
+        });
 
-    <footer>
-      <p></p>
-    </footer>
-  </div>
+        // Handle clicks on search suggestions
+        searchSuggestionsItems.forEach(suggestion => {
+            suggestion.addEventListener('click', () => {
+                const searchTerm = suggestion.getAttribute('data-search-term');
+                searchInput.value = searchTerm;
+                searchSuggestions.classList.remove('active');
 
-  <script>
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    const searchInput = document.getElementById('search-input');
-    const searchSuggestions = document.getElementById('search-suggestions');
-    const searchSuggestionsItems = document.querySelectorAll('.search-suggestion');
+                // Redirect after 2 seconds
+                setTimeout(() => {
+                    if (searchTerm === "بعض الاسعار") {
+                        window.location.href = "https://uptimeser.github.io/prices";
+                    } else if (searchTerm === "الحجز") {
+                        window.location.href = "https://uptimeser.github.io/Paymentinfo";
+                    }
+                }, 2000);
 
-    faqQuestions.forEach(question => {
-      question.addEventListener('click', () => {
-        question.classList.toggle('active');
-      });
-    });
+                setTimeout(() => {
+                    if (searchTerm === "تتبع الشحنة") {
+                        window.location.href = "https://uptimeser.github.io/track";
+                    }
+                }, 2000);
 
-    // Show suggestions when search bar is clicked
-    searchInput.addEventListener('click', () => {
-      searchSuggestions.classList.add('active');
-    });
-
-    // Hide suggestions when clicking outside the search area
-    document.addEventListener('click', (event) => {
-      if (!searchInput.contains(event.target) && !searchSuggestions.contains(event.target)) {
-        searchSuggestions.classList.remove('active');
-      }
-    });
-
-    // Handle clicks on search suggestions
-    searchSuggestionsItems.forEach(suggestion => {
-      suggestion.addEventListener('click', () => {
-        const searchTerm = suggestion.getAttribute('data-search-term');
-        searchInput.value = searchTerm;
-        searchSuggestions.classList.remove('active');
-
-        // Redirect after 2 seconds
-        setTimeout(() => {
-          if (searchTerm === "بعض الاسعار") {
-            window.location.href = "https://uptimeser.github.io/prices";
-          } else if (searchTerm === "الحجز") {
-            window.location.href = "https://uptimeser.github.io/Paymentinfo";
-          }
-        }, 2000);
-        
-        setTimeout(() => {
-          if (searchTerm === "تتبع الشحنة") {
-            window.location.href = "https://uptimeser.github.io/track";
-          }
-        }, 2000);
-        
-      });
-    });
-  </script>
+            });
+        });
+    </script>
 </body>
 </html>
