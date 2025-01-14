@@ -1,210 +1,39 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>معلومات الحجز</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap');
+<!DOCTYPE html><html lang="ar" dir="rtl"><head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>معلومات الحجز</title> <style> @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap');
+* { margin: 25; padding: 25; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+body { background-color: #0f1523; display: flex; justify-content: center; align-items: center; min-height: 100vh; flex-direction: column; color: #eee; }
 
-        * {
-            margin: 25;
-            padding: 25;
-            box-sizing: border-box;
-            font-family: 'Cairo', sans-serif;
-        }
-
-        body {
-            background-color: #181818;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            flex-direction: column;
-            color: #eee;
-        }
-
-        .container {
-            background-color: #101010;
-            border-radius: 20px; 
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
-            width: 90%;
-            max-width: 600px;
-            padding: 40px; 
-            animation: fadeIn 2s ease-in-out;
-        }
-        
-        
-
-@keyframes shimmeringEntrance {
-  0% {
-    filter: brightness(0.5) blur(5px); /* Start dim and blurred */
-    opacity: 0;
-  }
-  100% {
-    filter: brightness(1) blur(0); /* Transition to full brightness and sharpness */
-    opacity: 1;
-  }
-}
-
-
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-
-
-
-        
-        
-
-        .header-image {
-        animation: shimmeringEntrance 3s ease-in-out forwards;
-            width: 100%;
-            height: 220px; 
-            object-fit: cover;
-            border-radius: 16px;
+h90 {
+            font-size: 2.5rem;
+            color: #e1cbbd;
+            padding: 20px; 
+            margin-bottom: 20px;
+            font-weight: 600;
             margin-bottom: 30px; 
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            overflow: hidden; 
-        }
-
-        .header-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease; 
-        }
-
-        .header-image:hover img {
-            transform: scale(1.05);
-        }
-
-        .title {
-            color: #eee;
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 30px;
             text-align: center;
-        }
+            transition: transform 0.3s
+} 
 
-        .info-box {
-            background-color: #101010;
-          outline: #fff;
-           border-color: #fff;
-            border: #fff;
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 20px;
-  border: 1px rgba(55, 54, 78, 1);
-            
-            transition: all 0.2s ease-in-out;
-        }
+.container { background-color: #1d2339; border-radius: 20px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); width: 90%; max-width: 600px; padding: 40px; animation: fadeIn 2s ease-in-out; } 
+@keyframes shimmeringEntrance { 0% { filter: brightness(0.5) blur(5px); /* Start dim and blurred */ opacity: 0; } 100% { filter: brightness(1) blur(0); /* Transition to full brightness and sharpness */ opacity: 1; }}
 
-        .info-title {
-            color: #eee;
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
 
-        .info-text {
-            color: #ccc;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } } 
 
-        .payment-steps {
-            list-style: none;
-            counter-reset: step-counter;
-            padding-right: 20px; 
-        }
 
-        .payment-steps li {
-            margin-bottom: 15px;
-            padding-right: 35px;
-            position: relative;
-            color: #ccc;
-        }
 
-        .payment-steps li::before {
-            counter-increment: step-counter;
-            content: counter(step-counter) ".";
-            color: #4285f4; 
-            font-weight: bold;
-            position: absolute;
-            right: 0; 
-            top: 2px;
-        }
+.header-image { animation: shimmeringEntrance 3s ease-in-out forwards; width: 100%; height: 220px; object-fit: cover; border-radius: 16px; margin-bottom: 30px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); overflow: hidden; }
 
-        .note {
-            font-size: 16px;
-            color: #4285f4;
-            text-align: center;
-            margin-top: 30px;
-            line-height: 1.7;
-            -webkit-background-clip: text;
-      color: transparent;
-            background-image:
-            linear-gradient(to right, #4285f4, #4285f4, #4285f4, #4285f4);
-        }
-        
-        .borr {
-            font-size: 16px;
-            color: #4285f4;
-            text-align: center;
-            margin-top: 30px;
-            line-height: 1.7;
-            -webkit-background-clip: text;
-      color: transparent;
-            background-image:
-            linear-gradient(to right, #4285f4, #4285f4, #4285f4, #4285f4);
-        }
-
-        .info-box:hover {
-            background-color: #101010;
-            transform: translateY(-2px);
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header-image">
-            <img src="https://i.imgur.com/6kCKg6o.jpeg" alt="Header Image">
-        </div>
-        <h1 class="title">معلومات الحجز</h1>
-
-        <div class="info-box">
-            <h2 class="info-title">ملاحظات قبل الطلب</h2>
-            <ul class="payment-steps">
-                <li>الضمان لا يشمل سوء الاستخدام من طرفك إلا إذا كانت الشركة المصنعة توفر تصليح مجاني أو مخفض. 
-                    هنا أنت تحدد يتصلح أو لا.</li>
-                <li>  معلومات طلبك راح توصلك على شكل كود تتبع يتحدث بشكل شبه يومي.</li>
-                
-                
-            </ul>
-        </div>
-<p class="borr"></br>➖➖➖➖➖➖➖➖➖➖➖</p>
-        <div class="info-box">
-            <h2 class="info-title">طريقة الحجز</h2>
-            <ul class="payment-steps">
-                <li>دفع 50% من المبلغ الكلي للمنتج كعربون.</li>
-                <li>المبلغ غير قابل للإرجاع إلا في بعض الحالات المذكورة سابقاً.</li>
-                <li>العربون ثابت وإجباري غير قابل للتغيير أو المناقشة بأي شكل من الأشكال.</li>
-                <li>طرق الدفع حالياً ماستر رافدين فقط.</li>
-                <p></br>واذا ماكنت تمتلك رافدين، تكدر تشوف وكيل لبطاقتك ورافدين بنفس الوقت راح يستلم منك ويحولي رافدين</p>
-            </ul>
-        </div>
-
-        <p class="note">✨✨✨✨✨✨✨✨✨✨✨✨</p>
-    </div>
-</body>
-</html>
+.title { color: #e1cbbd; font-size: 32px; font-weight: 600; margin-bottom: 30px; text-align: center; }
+.info-box { background-color: #0f1523; outline: #e1cbbd; border-color: #e1cbbd; border: #e1cbbd; border-radius: 20px; padding: 20px; margin-bottom: 20px; border: 3px rgba(55, 54, 78, 1); transition: all 0.2s ease-in-out; }
+.info-title { color: #e1cbbd; font-size: 22px; font-weight: 600; margin-bottom: 20px; }
+.info-text { color: #e1cbbd; line-height: 1.8; margin-bottom: 20px; }
+.payment-steps { list-style: none; counter-reset: step-counter; padding-right: 20px; }
+.payment-steps li { margin-bottom: 15px; padding-right: 35px; position: relative; color: #e1cbbd; }
+.payment-steps li::before { counter-increment: step-counter; content: counter(step-counter) "."; color: #e1cbbd; font-weight: bold; position: absolute; right: 0; top: 2px; }
+.note { font-size: 16px; color: #4285f4; text-align: center; margin-top: 30px; line-height: 1.7; -webkit-background-clip: text; color: transparent; background-image: linear-gradient(to right, #4285f4, #4285f4, #4285f4, #4285f4); } .borr { font-size: 16px; color: #4285f4; text-align: center; margin-top: 30px; line-height: 1.7; -webkit-background-clip: text; color: transparent; background-image: linear-gradient(to right, #4285f4, #4285f4, #4285f4, #4285f4); }
+.info-box:hover { background-color: #; transform: translateY(-2px); } </style></head><body> 
+    
+    <div class="container"> <div class="m" </div> </div>
+    <h1 class="title">/!\</h1> <h1 class="title">معلومات الحجز</h1>
+<div class="info-box"> <h2 class="info-title">ملاحظات قبل الطلب</h2> <ul class="payment-steps"> <li>الضمان لا يشمل سوء الاستخدام من طرفك إلا إذا كانت الشركة المصنعة توفر تصليح مجاني أو مخفض. هنا أنت تحدد يتصلح أو لا.</li> <li> معلومات طلبك راح توصلك على شكل كود تتبع يتحدث بشكل شبه يومي.</li> </ul> </div><p class="borr"></br></p> <div class="info-box"> <h2 class="info-title">طريقة الحجز</h2> <ul class="payment-steps"> <li>دفع 50% من المبلغ الكلي للمنتج كعربون.</li> <li>المبلغ غير قابل للإرجاع إلا في بعض الحالات المذكورة سابقاً.</li> <li>العربون ثابت وإجباري غير قابل للتغيير أو المناقشة بأي شكل من الأشكال.</li> <li>طرق الدفع حالياً ماستر رافدين فقط.</li> <p></br>واذا ماكنت تمتلك رافدين، تكدر تشوف وكيل لبطاقتك ورافدين بنفس الوقت راح يستلم منك ويحولي رافدين</p> </ul> </div>
+<p class="note"></p> </div></body></html>
