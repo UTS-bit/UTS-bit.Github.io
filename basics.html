@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="شروط وأحكام الخدمة">
+    <title>شروط</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --red: #ff4444;
+            --dark: #1a1a1a;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --light: #ffffff;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .min-h-screen {
+            min-height: 100vh;
+        }
+
+        .bg-gray-900 {
+            background-color: var(--dark);
+        }
+
+        .text-white {
+            color: var(--light);
+        }
+
+        .p-5 {
+            padding: 1.25rem;
+        }
+
+        .max-w-2xl {
+            max-width: 42rem;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .my-10 {
+            margin-top: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .mb-5 {
+            margin-bottom: 1.25rem;
+        }
+
+        .text-8xl {
+        color: #ff4444;
+            font-size: 5rem;
+        }
+
+        .animate-pulse {
+            animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .7;
+            }
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .gap-4 {
+            gap: 1rem;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .mb-10 {
+            margin-bottom: 2.5rem;
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .bg-red-500 {
+            background-color: var(--red);
+        }
+
+        .bg-gray-700 {
+            background-color: var(--gray-700);
+        }
+
+        .text-gray-300 {
+            color: #d1d5db;
+        }
+
+        button:hover.bg-gray-700 {
+            background-color: var(--gray-800);
+        }
+
+        .space-y-8 > * + * {
+            margin-top: 2rem;
+        }
+
+        .bg-gray-800 {
+            background-color: var(--gray-800);
+        }
+
+        .p-8 {
+            padding: 2rem;
+        }
+
+        .border-r-4 {
+            border-right-width: 4px;
+        }
+
+        .border-red-500 {
+            border-right-color: var(--red);
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+        }
+
+        .font-bold {
+            font-weight: 700;
+        }
+
+        .text-red-500 {
+            color: var(--red);
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .space-y-6 > * + * {
+            margin-top: 1.5rem;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .pr-10 {
+            padding-right: 2.5rem;
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        .right-0 {
+            right: 0;
+        }
+
+        .top-0 {
+            top: 0;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/javascript">
+        const { useState } = React;
+
+        function TermsPage() {
+            const [activeState, setActiveState] = useState('first');
+
+            const content = {
+                first: {
+                    status: "مراح ادفعلك العربون كامل او راح ادفع سعر اقل من المتفق",
+                    intro: "صديقي اذا تحب تدفع سعر اقل من السعر المتفق او المكتوب، اكو اشياء لازم تعرفهن كونك خالفت الاتفاق",
+                    items: [
+                        {
+                            title: "كود التتبع",
+                            desc: "ماكو كود تتبع. كود التتبع فقط للي يلتزم بالاتفاق المكتوب كونه متعب ويتم تحديثه يومياً"
+                        },
+                        {
+                            title: "المقدم المدفوع",
+                            desc: "اي تاخير يحصل بالطلب مالك حق تطالب بالمقدم المدفوع. كونك ماتعاونت وياي مراح يتم التعاون وياك الا من ناحية الحقوق الثابتة الواجبة"
+                        },
+                        {
+                            title: "التحديثات",
+                            desc: "التحديثات على الخاص بشكل اسبوعي فقط، الاستثناء الوحيد من يصير مشكلة تحتاج التواصل راح يتم التواصل وياك مباشرة"
+                        },
+                        {
+                            title: "الميزات المستقبلية",
+                            desc: "مراح يتم شملك في الميزات والتحديثات القادمة الا في حال قدمت طلب جديد بعد طلبك، نفس النقطة تطبق ايضا لطلبك الجديد اذا كررت الفعلة"
+                        }
+                    ]
+                },
+                second: {
+                    status: "غير مستعد ادفعلك عربون او اريد دفع عن الاستلام",
+                    intro: "انشالله تلكة",
+                    items: [
+                        
+                    ]
+                }
+            };
+
+            return React.createElement(
+                "div",
+                { className: "min-h-screen bg-gray-900 text-white p-5" },
+                React.createElement(
+                    "div",
+                    { className: "max-w-2xl mx-auto" },
+                    React.createElement(
+                        "div",
+                        { className: "text-center my-10" },
+                        React.createElement(
+                            "div",
+                            { className: "text-8xl animate-pulse mb-5" },
+                            " /!\\ "
+                        )
+                    ),
+                    React.createElement(
+                        "div",
+                        { className: "flex gap-4 justify-center mb-10" },
+                        React.createElement(
+                            "button",
+                            {
+                                onClick: () => setActiveState('first'),
+                                className: `px-6 py-3 rounded-lg font-bold transition-all duration-300 ${
+                                    activeState === 'first'
+                                        ? 'bg-red-500 text-white'
+                                        : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                                }`
+                            },
+                            "الحالة الاولى"
+                        ),
+                        React.createElement(
+                            "button",
+                            {
+                                onClick: () => setActiveState('second'),
+                                className: `px-6 py-3 rounded-lg font-bold transition-all duration-300 ${
+                                    activeState === 'second'
+                                        ? 'bg-red-500 text-white'
+                                        : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                                }`
+                            },
+                            "الحالة الثانية"
+                        )
+                    ),
+                    React.createElement(
+                        "div",
+                        { className: "space-y-8" },
+                        React.createElement(
+                            "div",
+                            { className: "bg-gray-800 p-8 border-r-4 border-red-500" },
+                            React.createElement(
+                                "h2",
+                                { className: "text-2xl font-bold text-red-500 mb-4" },
+                                "الحالة:"
+                            ),
+                            React.createElement(
+                                "p",
+                                { className: "text-lg" },
+                                content[activeState].status
+                            )
+                        ),
+                        React.createElement(
+                            "div",
+                            { className: "bg-gray-800 p-8 border-r-4 border-red-500" },
+                            React.createElement(
+                                "h2",
+                                { className: "text-2xl font-bold text-red-500 mb-4" },
+                                "التعامل:"
+                            ),
+                            React.createElement(
+                                "p",
+                                { className: "text-lg mb-6" },
+                                content[activeState].intro
+                            ),
+                            React.createElement(
+                                "ol",
+                                { className: "space-y-6" },
+                                content[activeState].items.map((item, index) =>
+                                    React.createElement(
+                                        "li",
+                                        { key: index, className: "relative pr-10" },
+                                        React.createElement(
+                                            "span",
+                                            { className: "absolute right-0 top-0 text-2xl text-red-500 font-bold" },
+                                            "!"
+                                        ),
+                                        React.createElement(
+                                            "strong",
+                                            { className: "block text-red-500 text-xl mb-2" },
+                                            item.title
+                                        ),
+                                        item.desc
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+
+        ReactDOM.render(React.createElement(TermsPage), document.getElementById('root'));
+    </script>
+</body>
+</html>
