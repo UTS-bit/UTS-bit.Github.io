@@ -3,29 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <script>
-        window.onload = function() {
-            loadPHPContent();  // Automatically load PHP content when page loads
-        };
-
-        function loadPHPContent() {
-            const xhr = new XMLHttpRequest();
-            xhr.open("GET", "http://secure00012.liveblog365.com/index.php", true);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    // Display the PHP content inside the div with id 'content'
-                    document.getElementById("content").innerHTML = xhr.responseText;
-                }
-            };
-            xhr.send();
-        }
-    </script>
+    <title>Netlify Serverless Function</title>
 </head>
 <body>
+    <h1>Call Netlify Function</h1>
+    <button id="callButton">Call Function</button>
+    <p id="result"></p>
 
-    <div id="content">
-        <!-- PHP content will be loaded here automatically -->
-    </div>
+    <script>
+        document.getElementById("callButton").addEventListener("click", function() {
+            fetch("https://www334.netlify.app/.netlify/functions/index.js")
+                .then(response => response.Javascript())
+                .then(data => {
+                    document.getElementById("result").textContent = data.message;
+                })
+                .catch(error => console.error("Error:", error));
+        });
+    </script>
 </body>
 </html>
