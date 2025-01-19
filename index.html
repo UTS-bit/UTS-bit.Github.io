@@ -463,39 +463,36 @@
     </div>
 
     <script>
-        /
-        const faqQuestions = document.querySelectorAll('.faq-question');
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach(question => {
+    const button = question.querySelector('button');
+    button.addEventListener('click', () => {
+        question.classList.toggle('active');
         
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                question.classList.toggle('active');
-                
-                /
-                faqQuestions.forEach(otherQuestion => {
-                    if (otherQuestion !== question) {
-                        otherQuestion.classList.remove('active');
-                    }
-                });
-            });
-        });
-
-        /
-        const scrollToTop = document.querySelector('.scroll-to-top');
-
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollToTop.classList.add('visible');
-            } else {
-                scrollToTop.classList.remove('visible');
+        faqQuestions.forEach(otherQuestion => {
+            if (otherQuestion !== question) {
+                otherQuestion.classList.remove('active');
             }
         });
+    });
+});
+const scrollToTop = document.querySelector('.scroll-to-top');
 
-        scrollToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        scrollToTop.classList.add('visible');
+    } else {
+        scrollToTop.classList.remove('visible');
+    }
+});
+
+scrollToTop.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
