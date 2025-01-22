@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FormSubmit Demo</title>
+    <title>تقديم</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Rubik', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
         body {
@@ -19,64 +24,35 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #1a1d25;
+            background: linear-gradient(135deg, #1a1d25 0%, #1a1d25 100%);
             padding: 20px;
-            color: #fff;
         }
 
         .container {
             width: 100%;
             max-width: 600px;
-            background: rgba(26, 29, 37, 0.95);
+            background: rgba(0, 0, 0, 0.35);
             padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+            border-radius: 40px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         h1 {
             color: #fff;
             text-align: center;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
-        }
-
-        .subtitle {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.6);
             margin-bottom: 30px;
-            font-size: 0.9em;
+            font-size: 2.5em;
         }
 
         .form-group {
             margin-bottom: 25px;
-            position: relative;
         }
 
         .form-row {
             display: flex;
             gap: 20px;
             margin-bottom: 25px;
-        }
-
-        .input-group {
-            position: relative;
-            width: 100%;
-        }
-
-        .input-icon {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: rgba(255, 255, 255, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .with-icon {
-            padding-left: 45px !important;
         }
 
         @media (max-width: 768px) {
@@ -89,354 +65,122 @@
         .form-control {
             width: 100%;
             padding: 15px;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            color: #fff;
+            background: #1a1d25;
+            border: 2px solid #1a1d25;
+            border-radius: 20px;
             font-size: 16px;
             transition: all 0.3s ease;
             outline: none;
-            background: rgba(0, 0, 0, 0.35);
-            color: #fff;
         }
 
         .form-control:focus {
-            border-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
-        }
-
-        .form-control:focus + .input-icon {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .character-counter {
-            position: absolute;
-            right: 10px;
-            bottom: -20px;
-            font-size: 0.8em;
-            color: rgba(255, 255, 255, 0.5);
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.25);
         }
 
         textarea.form-control {
             resize: vertical;
             min-height: 150px;
-            padding-right: 60px;
         }
 
         .btn {
             width: 100%;
             padding: 15px;
             border: none;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            background: linear-gradient(135deg, #1a1d35 0%, #1a1d35 100%);
             color: white;
             font-size: 18px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .btn:hover {
             transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .btn:active {
             transform: translateY(0);
         }
 
-        .btn .loading {
-            display: none;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+        /* Animation classes */
+        .form-control, .btn {
+            animation: fadeInUp;
+            animation-duration: 1s;
         }
 
-        .btn.loading-state {
-            color: transparent;
-        }
-
-        .btn.loading-state .loading {
-            display: block;
-            color: white;
-        }
-
-        .satisfaction-rating {
-            text-align: center;
-            margin-top: 20px;
-            display: none;
-        }
-
-        .satisfaction-rating p {
-            margin-bottom: 10px;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .rating-stars {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .star {
-            font-size: 24px;
-            color: rgba(255, 255, 255, 0.3);
-            cursor: pointer;
+        /* Input field animations */
+        .form-control::placeholder {
             transition: all 0.3s ease;
         }
 
-        .star:hover {
-            color: #ffd700;
-            transform: scale(1.2);
+        .form-control:focus::placeholder {
+            transform: translateX(10px);
+            opacity: 0.5;
         }
 
-        .star.active {
-            color: #ffd700;
-        }
-
-        .validation-message {
-            position: absolute;
-            bottom: -20px;
-            left: 0;
-            font-size: 0.8em;
-            color: #ff6b6b;
-            display: none;
-        }
-
-        .form-control.invalid {
-            border-color: #ff6b6b;
-        }
-
+        /* Success message */
         .success-message {
             display: none;
             text-align: center;
-            color: #4ade80;
+            color: #48bb78;
             margin-top: 20px;
-            padding: 15px;
+            padding: 10px;
             border-radius: 8px;
-            background: rgba(74, 222, 128, 0.1);
+            background: #f0fff4;
             animation: fadeIn 0.5s ease;
-            border: 1px solid rgba(74, 222, 128, 0.2);
-        }
-
-        .progress-bar {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 3px;
-            width: 0;
-            background: linear-gradient(90deg, #4ade80, #60a5fa);
-            transition: width 0.3s ease;
-        }
-
-        .tooltip {
-            position: absolute;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8em;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .help-text {
-            position: absolute;
-            right: -30px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: rgba(255, 255, 255, 0.4);
-            cursor: help;
-        }
-
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            75% { transform: translateX(5px); }
-        }
-
-        .shake {
-            animation: shake 0.5s ease-in-out;
         }
     </style>
 </head>
 <body>
     <div class="container animate__animated animate__fadeIn">
-        <h1 class="animate__animated animate__fadeInDown">FormSubmit Demo</h1>
-        <p class="subtitle">We'd love to hear from you! Please fill out the form below.</p>
-        
-        <form target="_blank" action="https://formsubmit.co/mhdyahmdmly@gmail.com" method="POST" id="contactForm">
+        <h1 class="animate__animated animate__fadeInDown">\\//</h1>
+        <form target="_blank" action="https://formsubmit.co/your@email.com" method="POST" id="contactForm">
             <div class="form-group">
                 <div class="form-row">
-                    <div class="input-group">
-                        <input type="text" name="name" class="form-control with-icon animate__animated animate__fadeInLeft" placeholder="Full Name" required>
-                        <i class="input-icon fas fa-user"></i>
-                        <div class="validation-message">Please enter your name</div>
+                    <div class="col">
+                        <input type="text" name="name" class="form-control animate__animated animate__fadeInLeft" placeholder="الاسم" required>
                     </div>
-                    <div class="input-group">
-                        <input type="number" name="email" class="form-control with-icon animate__animated animate__fadeInRight" placeholder="Email Address" required>
-                        <i class="input-icon fas fa-envelope"></i>
-                        <div class="validation-message">Please enter a valid email</div>
+                    <div class="col">
+                        <input type="number" name="email" class="form-control animate__animated animate__fadeInRight" placeholder="رقم الهاتف" required>
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <div class="input-group">
-                    <textarea placeholder="Your Message" class="form-control animate__animated animate__fadeInUp" name="message" rows="10" required></textarea>
-                    <i class="help-text fas fa-question-circle" title="Share your thoughts, questions, or feedback"></i>
-                    <div class="character-counter">0/1000</div>
-                    <div class="validation-message">Please enter your message</div>
-                    <div class="progress-bar"></div>
-                </div>
+                <textarea placeholder="بقية التفاصيل" class="form-control animate__animated animate__fadeInUp" name="message" rows="10" required></textarea>
             </div>
-            <button type="submit" class="btn animate__animated animate__fadeInUp">
-                Submit Form
-                <span class="loading"><i class="fas fa-spinner fa-spin"></i></span>
-            </button>
+            <button type="submit" class="btn animate__animated animate__fadeInUp">تقديم طلب</button>
         </form>
-        
         <div class="success-message">
-            <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.
-        </div>
-        
-        <div class="satisfaction-rating">
-            <p>How was your experience?</p>
-            <div class="rating-stars">
-                <i class="star fas fa-star" data-rating="1"></i>
-                <i class="star fas fa-star" data-rating="2"></i>
-                <i class="star fas fa-star" data-rating="3"></i>
-                <i class="star fas fa-star" data-rating="4"></i>
-                <i class="star fas fa-star" data-rating="5"></i>
-            </div>
+            تم تقديم الطلب بنجاح! 
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('contactForm');
-            const textarea = form.querySelector('textarea');
-            const counter = document.querySelector('.character-counter');
-            const progressBar = document.querySelector('.progress-bar');
-            const stars = document.querySelectorAll('.star');
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // Show success message animation
+            const successMessage = document.querySelector('.success-message');
+            successMessage.style.display = 'block';
             
-            // Character counter and progress bar
-            textarea.addEventListener('input', function() {
-                const maxLength = 1000;
-                const length = this.value.length;
-                counter.textContent = `${length}/${maxLength}`;
-                progressBar.style.width = `${(length / maxLength) * 100}%`;
-                
-                if (length > maxLength) {
-                    this.value = this.value.substring(0, maxLength);
-                }
+            // Reset form fields after submission
+            setTimeout(() => {
+                this.reset();
+            }, 2000);
+        });
+
+        // Add animation to form fields when they come into focus
+        document.querySelectorAll('.form-control').forEach(element => {
+            element.addEventListener('focus', function() {
+                this.classList.add('animate__animated', 'animate__pulse');
             });
 
-            // Real-time validation
-            form.querySelectorAll('.form-control').forEach(input => {
-                input.addEventListener('input', function() {
-                    validateInput(this);
-                });
-
-                input.addEventListener('blur', function() {
-                    validateInput(this);
-                });
+            element.addEventListener('blur', function() {
+                this.classList.remove('animate__animated', 'animate__pulse');
             });
-
-            // Form submission handling
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                let isValid = true;
-                form.querySelectorAll('.form-control').forEach(input => {
-                    if (!validateInput(input)) {
-                        isValid = false;
-                        input.classList.add('shake');
-                        setTimeout(() => input.classList.remove('shake'), 500);
-                    }
-                });
-
-                if (!isValid) return;
-
-                const button = form.querySelector('.btn');
-                button.classList.add('loading-state');
-                
-                // Simulate form submission
-                setTimeout(() => {
-                    button.classList.remove('loading-state');
-                    document.querySelector('.success-message').style.display = 'block';
-                    document.querySelector('.satisfaction-rating').style.display = 'block';
-                    form.reset();
-                    progressBar.style.width = '0';
-                    counter.textContent = '0/1000';
-                }, 1500);
-            });
-
-            // Star rating system
-            stars.forEach(star => {
-                star.addEventListener('click', function() {
-                    const rating = this.dataset.rating;
-                    stars.forEach(s => {
-                        s.classList.toggle('active', s.dataset.rating <= rating);
-                    });
-                });
-            });
-
-            // Help text tooltip
-            const helpIcon = document.querySelector('.help-text');
-            helpIcon.addEventListener('mouseenter', function(e) {
-                const tooltip = document.createElement('div');
-                tooltip.className = 'tooltip';
-                tooltip.textContent = this.getAttribute('title');
-                document.body.appendChild(tooltip);
-                
-                const rect = this.getBoundingClientRect();
-                tooltip.style.top = `${rect.top - tooltip.offsetHeight - 10}px`;
-                tooltip.style.left = `${rect.left - tooltip.offsetWidth/2 + this.offsetWidth/2}px`;
-                tooltip.style.opacity = '1';
-                
-                this.addEventListener('mouseleave', () => tooltip.remove());
-            });
-
-            // Input validation function
-            function validateInput(input) {
-                const validationMessage = input.parentElement.querySelector('.validation-message');
-                let isValid = true;
-
-                if (input.required && !input.value) {
-                    showError(input, validationMessage, 'This field is required');
-                    isValid = false;
-                } else if (input.type === 'email' && !isValidEmail(input.value)) {
-                    showError(input, validationMessage, 'Please enter a valid email');
-                    isValid = false;
-                } else {
-                    hideError(input, validationMessage);
-                }
-
-                return isValid;
-            }
-
-            function showError(input, message, text) {
-                input.classList.add('invalid');
-                message.textContent = text;
-                message.style.display = 'block';
-            }
-
-            function hideError(input, message) {
-                input.classList.remove('invalid');
-                message.style.display = 'none';
-            }
-
-            function isValidEmail(email) {
-                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-            }
         });
     </script>
 </body>
-  </html>
+</html>
