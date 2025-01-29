@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمات الشراء والشحن</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #1a1d25;
+            --bg-secondary: rgba(89, 113, 102, 0.22);
+            --bg-elevated: #17171a;
+            --text-primary: #f8f9fb;
+            --text-secondary: #a1a1aa;
+            --accent: #34695d;
+            --accent-dark: #4f46e5;
+            --border: #27272a;
+            --surface: #18181b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 12, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 8rem 1.5rem 4rem;
+        }
+
+        .hero {
+            margin-bottom: 6rem;
+        }
+
+        h1 {
+        text-align: center;
+            font-size: clamp(2.5rem, 5vw, 3.75rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            background: linear-gradient(to right, var(--text-primary), var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        .lead {
+        Text-align: center;
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 32rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .button {
+            background: var(--accent);
+            color: white;
+            padding: 0.875rem 1.75rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 1rem;
+        }
+
+        .button:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        .button.ghost {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .button.ghost:hover {
+            background: var(--surface);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, var(--accent), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card:hover {
+            background: var(--bg-elevated);
+            transform: translateY(-2px);
+        }
+
+        .icon {
+            background: rgba(89, 113, 102, 0.22);
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .card h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 6rem 1rem 2rem;
+            }
+            
+            .grid {
+                gap: 1rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <section class="hero">
+            <h1>U p T i m e</h1>
+            <p class="lead">شنو الي يميزها عن البقية؟ </p>
+            
+        </section>
+
+        <div class="grid">
+            <div class="card">
+                <div class="icon">✧</div>
+                <h2>الوعود</h2>
+                <p>خدمتنا تتميز بالوعود الصادقة يتم الالتزام بالوعود المكتوبة نصاً بدون كذب او دعاية</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">◈</div>
+                <h2>خدمة شخصية</h2>
+                <p>تعتبر الخدمة خدمة شخصية وليست تجارية باي شكل من الاشكال</p>
+            </div>
+            
+             <div class="card">
+                <div class="icon">→</div>
+                <h2>مدة الشحن</h2>
+                <p>تتميز ايضا بمدة شحن شبه ثابتة غير قابلة للتغير و سريعة مقارنة ببقية الخدمات</p>
+            </div>
+
+ <div class="card">
+                <div class="icon">乂</div>
+                <h2>الاسعار</h2>
+                <p>تعتبر اسعار الشحن جداً مناسبة مقارنة بالمميزات والضمانات المقدمة للزبون</p>
+            </div>
+            
+             <div class="card">
+            <div class="icon">ღ</div>
+                <h2>الشحن</h2>
+                <p>الشحن من اي موقع على الانترنت الى باب بيتك بنفس الضمانات ومدة الوصول على عكس بقية الخدمات والتطبيقات</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">○</div>
+                <h2>النظام</h2>
+                <p>تكدر تسوي كلشي من خلال الموقع فقط وماتحتاج تتواصل ويانا بشكل مباشر</br></br></p>
+                <p>تحسب سعر الشحن الكلي !</p>
+                <p>تعرف تفاصيل وشروط الحجز !</p>
+                <p>تقدم على طلب مباشرة من خلال الموقع !</p>
+                <p>تتبع شحنتك بعد الشراء مباشرة من خلال الموقع !</p>
+                
+            </div>
+        </div>
+    </main>
+</body>
+</html>
