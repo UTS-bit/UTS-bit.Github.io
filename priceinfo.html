@@ -9,10 +9,10 @@
         :root {
             --bg-primary: #111827;
             --bg-secondary: #1f2937;
-            --text-primary: #f3f4f6;
-            --text-secondary: #e5e7eb;
-            --accent-color: #33cccc;
-            --accent-color-hover: #33cccc;
+            --text-primary: #111;
+            --text-secondary: #eee;
+            --accent-color: rgba(89, 113, 102, 0.22);
+            --accent-color-hover: rgba(89, 113, 102, 0.22);
             --card-bg: #374151;
             --border-color: rgba(255,255,255,0.1);
         }
@@ -92,7 +92,7 @@
 
         .tab.active {
             background: var(--accent-color);
-            color: var(--bg-primary);
+            color: #fff;
             transform: translateY(-2px);
         }
 
@@ -109,7 +109,7 @@
 
         .pricing-table {
             background: var(--card-bg);
-            border-radius: 26px;
+            border-radius: 20px;
             margin-bottom: 30px;
             overflow: hidden;
             transition: all 0.4s ease;
@@ -146,7 +146,7 @@
         th {
             background: rgba(255,255,255,0.05);
             font-weight: bold;
-            color: var(--accent-color);
+            color: #000;
         }
 
         tr:hover {
@@ -154,7 +154,7 @@
         }
 
         .price {
-            color: var(--accent-color);
+            color: #000;
             font-weight: bold;
             position: relative;
         }
@@ -219,7 +219,7 @@
             align-items: center;
             gap: 10px;
             background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-color-hover) 100%);
-            color: var(--bg-primary);
+            color: #fff;
             padding: 15px 40px;
             text-decoration: none;
             border-radius: 12px;
@@ -264,7 +264,7 @@
 <body>
     <div class="container">
         <header class="header">
-            <h1>* شامل جميع التكاليف *</h1>
+            <h1></h1>
         </header>
 
         <div class="tabs">
@@ -302,163 +302,7 @@
     </div>
 
     <script>
-        const pricingData = {
-            pro: [
-                {
-                    model: 'Macbook pro M4',
-                    specs: [
-                        { ram: '16', storage: '512', price: '2,000,000 IQD', gpu: '' },
-                        { ram: '16', storage: '1Tb', price: '2,300,000 IQD', gpu: '' },
-                        { ram: '24', storage: '512', price: '2,300,000 IQD', gpu: '' },
-                        { ram: '24', storage: '1Tb', price: '2,500,000 IQD', gpu: '' }
-                    ]
-                },
-                {
-                    model: 'Macbook pro M4 Pro',
-                    specs: [
-                        { ram: '24', storage: '512', price: '2,700,000 IQD', gpu: '' },
-                        { ram: '24', storage: '1Tb', price: '3,000,000 IQD', gpu: '' }
-                    ]
-                },
-                {
-                    model: 'Macbook pro M4 Max',
-                    specs: [
-                        { ram: '36', storage: '1Tb', price: '4,000,000 IQD', gpu: '32 GPU' },
-                        { ram: '48', storage: '1Tb', price: '5,000,000 IQD', gpu: '40 GPU' },
-                        { ram: '64', storage: '1Tb', price: '5,300,000 IQD', gpu: '40 GPU' },
-                        { ram: '64', storage: '2Tb', price: '5,850,000 IQD', gpu: '40 GPU' }
-                    ]
-                }
-            ],
-            air: [
-                {
-                    model: 'Macbook Air M3',
-                    specs: [
-                        { ram: '16', storage: '256', price: '1,300,000 IQD', gpu: 'Standard (8 GPU)' },
-                        { ram: '16', storage: '256', price: '1,600,000 IQD', gpu: '10 GPU' },
-                        { ram: '16', storage: '512', price: '1,550,000 IQD', gpu: 'Standard (8 GPU)' },
-                        { ram: '16', storage: '512', price: '1,700,000 IQD', gpu: '10 GPU' },
-                        { ram: '24', storage: '512', price: '1,820,000 IQD', gpu: 'Standard (8 GPU)' },
-                        { ram: '24', storage: '512', price: '1,990,000 IQD', gpu: '10 GPU' },
-                        { ram: '24', storage: '1Tb', price: '2,200,000 IQD', gpu: '10 GPU' },
-                        { ram: '24', storage: '2Tb', price: '2,660,000 IQD', gpu: '10 GPU' }
-                    ]
-                }
-            ],
-            mini: [
-                {
-                    model: 'Mac Mini M4',
-                    specs: [
-                        { ram: '16', storage: '256', price: '800,000 IQD' },
-                        { ram: '16', storage: '512', price: '1,015,000 IQD' }
-                    ]
-                },
-                {
-                    model: 'Mac Mini M4 Pro',
-                    specs: [
-                        { ram: '24', storage: '512', price: '1,850,000 IQD' },
-                        { ram: '24', storage: '1TB', price: '2,200,000 IQD' },
-                        { ram: '24', storage: '2TB', price: '2,800,000 IQD' }
-                    ]
-                },
-                {
-                    model: 'Mac Mini M4 Pro (14 CPU, 20GPU)',
-                    specs: [
-                        { ram: '24', storage: '512', price: '2,200,000 IQD', gpu: '20' },
-                        { ram: '24', storage: '1TB', price: '2,500,000 IQD', gpu: '20' },
-                        { ram: '48', storage: '1TB', price: '2,900,000 IQD', gpu: '20' },
-                        { ram: '64', storage: '2TB', price: '3,700,000 IQD', gpu: '20' },
-                        { ram: '48', storage: '1TB', price: '3,100,000 IQD', gpu: '20, 10Gb Ethernet' },
-                        { ram: '64', storage: '2TB', price: '3,900,000 IQD', gpu: '20, 10Gb Ethernet' }
-                    ]
-                }
-            ]
-        };
-
-        function generatePricingTable(data) {
-            return data.map(category => `
-                <div class="pricing-table">
-                    <div class="pricing-table-header">
-                        ${category.model}
-                        <i class="ri-macbook-line"></i>
-                    </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>RAM</th>
-                                <th>التخزين</th>
-                                <th>السعر (IQD)</th>
-                                <th>GPU</th>
-                                 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            ${category.specs.map(spec => `
-                                <tr>
-                                    <td>${spec.ram} GB</td>
-                                    <td>${spec.storage}</td>
-                                    <td class="price">${spec.price}</td>
-                                    <td>${spec.gpu || '-'}</td>
-                                </tr>
-                            `).join('')}
-                        </tbody>
-                    </table>
-                </div>
-            `).join('');
-        }
-
-        function initializePricingTables() {
-            document.getElementById('pro-pricing').innerHTML = generatePricingTable(pricingData.pro);
-            document.getElementById('air-pricing').innerHTML = generatePricingTable(pricingData.air);
-            document.getElementById('mini-pricing').innerHTML = generatePricingTable(pricingData.mini);
-        }
-
-        function setupTabSwitching() {
-            const tabs = document.querySelectorAll('.tab');
-            const proPricing = document.getElementById('pro-pricing');
-            const airPricing = document.getElementById('air-pricing');
-            const miniPricing = document.getElementById('mini-pricing');
-            const extraInfo = document.getElementById('air-extra-info');
-
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    tabs.forEach(t => t.classList.remove('active'));
-                    tab.classList.add('active');
-
-                    proPricing.classList.remove('active');
-                    airPricing.classList.remove('active');
-                    miniPricing.classList.remove('active');
-                    proPricing.style.display = 'none';
-                    airPricing.style.display = 'none';
-                    miniPricing.style.display = 'none';
-
-                    if (tab.dataset.tab === 'pro') {
-                        proPricing.style.display = 'block';
-                        extraInfo.style.display = 'none';
-                        requestAnimationFrame(() => {
-                            proPricing.classList.add('active');
-                        });
-                    } else if (tab.dataset.tab === 'air') {
-                        airPricing.style.display = 'block';
-                        extraInfo.style.display = 'block';
-                        requestAnimationFrame(() => {
-                            airPricing.classList.add('active');
-                        });
-                    } else if (tab.dataset.tab === 'mini') {
-                        miniPricing.style.display = 'block';
-                        extraInfo.style.display = 'none';
-                        requestAnimationFrame(() => {
-                            miniPricing.classList.add('active');
-                        });
-                    }
-                });
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            initializePricingTables();
-            setupTabSwitching();
-        });
+        const UpTimeaE=UpTimed;(function(a,b){const aw=UpTimed,c=a();while(!![]){try{const d=-parseInt(aw(0xb4))/(0x1e2*-0x12+0x12a9+0x104*0xf)+-parseInt(aw(0xa1))/(-0x2ab+0x1f74+-0x1cc7)*(parseInt(aw(0x9a))/(0x1ba7+-0x1271+0x3*-0x311))+-parseInt(aw('0x9b'))/(0x115*-0x2+-0x13*-0x95+0x1*-0x8e1)+-parseInt(aw('0xff'))/(-0xf*0xaa+-0x1255+-0x4b8*-0x6)*(parseInt(aw('0x10a'))/(-0x450*-0x5+0x184a+0x4*-0xb75))+parseInt(aw(0x95))/(-0x1*-0x10fd+0x10c9*0x1+-0x21bf)*(parseInt(aw('0xe3'))/(-0x1f*0x2e+0x1d5a+-0x17c0))+-parseInt(aw(0xd2))/(-0x5*-0x228+0x17d3+-0x2292)+parseInt(aw('0xb7'))/(0x16f2+-0x5e*-0x42+-0x2f24);if(d===b)break;else c['push'](c['shift']());}catch(e){c['push'](c['shift']());}}}(UpTimec,0x3*0x15e0d+0x15057*-0x3+0x72e5*0x19));const UpTimeP=(function(){let a=!![];return function(b,c){const d=a?function(){const ax=UpTimed;if(c){const e=c[ax('0xbf')](b,arguments);return c=null,e;}}:function(){};return a=![],d;};}()),UpTimeQ=UpTimeP(this,function(){const ay=UpTimed,a={'aejRH':function(t,u){return t+u;},'hajmG':ay('0xa8'),'RNWEX':ay(0x86),'SGMRP':function(t,u){return t!=u;},'kVZaN':function(t,u){return t<u;},'pyfAG':function(t,u){return t!=u;},'DSMso':function(t,u){return t+u;},'ofGNp':function(t,u,v,w){return t(u,v,w);},'wUbdR':function(t,u,v,w){return t(u,v,w);},'ZjkNw':function(t,u,v,w){return t(u,v,w);},'BconH':function(t){return t();},'fqHHH':ay(0x101),'BRnPE':function(t,u,v,w){return t(u,v,w);},'FgfuP':function(t,u){return t>u;},'MLwQt':function(t,u){return t||u;},'Umspc':function(t,u){return t!==u;},'xWRzI':function(t,u){return t===u;},'JignY':function(t,u){return t==u;},'SFzqu':ay(0x8c)},b=function(){const az=ay;let t;try{t=Function(a[az('0xf8')](a[az('0x9e')]+a[az('0xc6')],');'))();}catch(u){t=window;}return t;},c=a[ay(0x7d)](b),e=new RegExp(a[ay(0xc7)],'g'),f=ay('0xee')[ay('0xae')](e,'')[ay('0x92')](';');let g,h,j,k;const l=function(t,u,v){const aA=ay;if(a[aA('0xf6')](t[aA(0x10e)],u))return![];for(let w=0xb*-0x24b+0x3d*-0x3c+0x2785;a[aA(0x9c)](w,u);w++){for(let x=-0x129f+-0xb07+0xa*0x2f7;a[aA(0x9c)](x,v[aA('0x10e')]);x+=0xb8f+0x90c+-0x1499){if(w==v[x]&&a[aA(0xd1)](t[aA(0xca)](w),v[a[aA('0xad')](x,0x5*-0x502+0x1*0x1d1e+-0x413)]))return![];}}return!![];},m=function(t,u,v){const aB=ay;return a[aB(0x89)](l,u,v,t);},n=function(t,u,v){const aC=ay;return a[aC('0xc1')](m,u,t,v);},o=function(t,u,v){const aD=ay;return a[aD(0xf4)](n,u,v,t);};for(let t in c){if(a[ay('0x104')](l,t,-0xccd+0x899*0x1+0x43c,[0xa5b*-0x1+-0x18e3+0x2345,-0xa3d*-0x2+-0x1*0x911+0xb*-0xff,-0x1e10+-0x73*0x2b+0x3166,-0x1a6+-0x16fd+0x1908,-0x53*0xa+0x14fd+-0x8de*0x2,-0x2187+-0x1dbd*-0x1+0x43f,0xa1f*-0x3+-0x481*0x5+-0x7*-0x78e,-0x257*-0x8+0x1*0x21d+-0x1471])){g=t;break;}}for(let u in c[g]){if(o(0xe4b*0x1+0x17ae+-0x25f3,u,[-0x1*-0x10+-0xc25*0x2+-0x183f*-0x1,0xcaa+-0x47+-0x1*0xbf5,-0xd*-0x10f+0x263f+-0x3402,-0x2*0x529+0xe8a+-0x3d4])){h=u;break;}}for(let v in c[g]){if(a[ay(0x89)](n,v,[0x38f*0x1+-0x7*0x1c1+0x1*0x8bf,-0x1f5c+-0x73b+0x7*0x593,0x3*0x7d9+-0xa+0x1781*-0x1,-0x2207*-0x1+0x9f*0xc+-0x17*0x1c9],-0x576*-0x3+-0x2452+0x13f8)){j=v;break;}}if(!a[ay(0xa9)]('~',h))for(let w in c[g][j]){if(a[ay('0x89')](m,[-0x1d2a+0xef1*0x1+0xe40,0x11*0x9f+0xeb+-0x1*0xb15,-0x4*0x892+0x1d80+0x4c8,-0x2379+-0x447+0x2828],w,0xd*-0x1d+0xed*-0x17+0x16cc)){k=w;break;}}if(!g||!c[g])return;const p=c[g][h],q=!!c[g][j]&&c[g][j][k],r=a[ay(0xfc)](p,q);if(!r)return;let s=![];for(let x=0xe8d+-0x3*-0x178+-0xd3*0x17;a[ay(0x9c)](x,f[ay(0x10e)]);x++){const y=f[x],z=y[0x361*-0x4+0x16e9+-0x965]===String[ay('0xac')](-0x2659+-0x7aa+-0x2b*-0x113)?y[ay(0xa3)](0x1b14+-0x3*0xa06+0x2ff):y,A=r[ay('0x10e')]-z[ay(0x10e)],B=r[ay(0x10d)](z,A),C=a[ay('0xd3')](B,-(-0x1*-0x1226+-0x194*0x17+-0x60d*-0x3))&&a[ay('0xa5')](B,A);C&&((a[ay(0x99)](r[ay(0x10e)],y[ay(0x10e)])||a[ay('0xa5')](y[ay(0x10d)]('.'),0x1cd7+-0x1c8b+-0x4*0x13))&&(s=!![]));}if(!s){const D=new RegExp(a[ay(0xf1)],'g'),E=ay('0xf9')[ay(0xae)](D,'');c[g][j]=E;}});UpTimeQ();const UpTimeR={};UpTimeR[UpTimeaE(0xbd)]='16',UpTimeR[UpTimeaE('0xed')]=UpTimeaE(0xb8),UpTimeR[UpTimeaE('0xcb')]=UpTimeaE('0xdd'),UpTimeR[UpTimeaE('0xa7')]='';const UpTimeS={};UpTimeS[UpTimeaE('0xbd')]='16',UpTimeS[UpTimeaE(0xed)]=UpTimeaE(0xe6),UpTimeS[UpTimeaE(0xcb)]=UpTimeaE(0xbe),UpTimeS[UpTimeaE(0xa7)]='';const UpTimeT={};UpTimeT[UpTimeaE(0xbd)]='24',UpTimeT[UpTimeaE(0xed)]=UpTimeaE('0xb8'),UpTimeT[UpTimeaE('0xcb')]=UpTimeaE(0xbe),UpTimeT[UpTimeaE(0xa7)]='';const UpTimeU={};UpTimeU[UpTimeaE(0xbd)]='24',UpTimeU[UpTimeaE(0xed)]=UpTimeaE('0xe6'),UpTimeU[UpTimeaE(0xcb)]=UpTimeaE('0xeb'),UpTimeU[UpTimeaE('0xa7')]='';const UpTimeV={};UpTimeV[UpTimeaE('0xb5')]=UpTimeaE('0xc3'),UpTimeV[UpTimeaE('0x8a')]=[UpTimeR,UpTimeS,UpTimeT,UpTimeU];const UpTimeW={};UpTimeW[UpTimeaE(0xbd)]='24',UpTimeW[UpTimeaE('0xed')]=UpTimeaE(0xb8),UpTimeW[UpTimeaE('0xcb')]=UpTimeaE(0xde),UpTimeW[UpTimeaE(0xa7)]='';const UpTimeX={};UpTimeX[UpTimeaE(0xbd)]='24',UpTimeX[UpTimeaE('0xed')]=UpTimeaE('0xe6'),UpTimeX[UpTimeaE('0xcb')]=UpTimeaE('0xe1'),UpTimeX[UpTimeaE(0xa7)]='';const UpTimeY={};UpTimeY[UpTimeaE(0xb5)]=UpTimeaE(0x96),UpTimeY[UpTimeaE(0x8a)]=[UpTimeW,UpTimeX];const UpTimeZ={};UpTimeZ[UpTimeaE(0xbd)]='36',UpTimeZ[UpTimeaE(0xed)]=UpTimeaE(0xe6),UpTimeZ[UpTimeaE('0xcb')]=UpTimeaE(0xd5),UpTimeZ[UpTimeaE('0xa7')]=UpTimeaE(0x10b);function UpTimec(){const aO=['256485GgvrFg','Macbook\x20pro\x20M4\x20Max','[FdOZGKyBxSENKKJdDLByXyPAzHnwxfClBGdqJGYkdvdn]','oFtFl','display','BRnPE','edXpT','.tab','addEventListener','tab','block','48QJDLOC','32\x20GPU','innerHTML','indexOf','length','DOMContentLoaded','RtjfS','uArAK','BconH','yjzrA','1,820,000\x20IQD','Mac\x20Mini\x20M4','2,660,000\x20IQD','air-extra-info','JBcnV','lhhWK','ZITVR','{}.constructor(\x22return\x20this\x22)(\x20)','1TB','FsTsp','ofGNp','specs','UplEf','[MHZwHKqLJNnyTVSBJKPIHvXSxEMPPUMXWxLGPLTIzGJPFOLQICynMWwxTVOZVczDFGZOK]','active','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22pricing-table\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22pricing-table-header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','3,900,000\x20IQD','VdcFq','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<i\x20class=\x22ri-macbook-line\x22></i>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<table>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<thead>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th>RAM</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th>التخزين</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th>السعر\x20(IQD)</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th>GPU</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</thead>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tbody>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','split','1,850,000\x20IQD','pro-pricing','14pfowJv','Macbook\x20pro\x20M4\x20Pro','800,000\x20IQD','1,300,000\x20IQD','JignY','1896186ezqBxY','3469872zktwZJ','kVZaN','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tbody>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</table>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','hajmG','5,300,000\x20IQD','add','4rXsgLK','Mac\x20Mini\x20M4\x20Pro','slice','mini','xWRzI','air-pricing','gpu','return\x20(function()\x20','FgfuP','2,900,000\x20IQD','mini-pricing','fromCharCode','DSMso','replace','join','3,700,000\x20IQD','classList','2,800,000\x20IQD','Macbook\x20Air\x20M3','656474MVgqQJ','model','dataset','46385750Owmjwm','512','air','1,550,000\x20IQD','2,200,000\x20IQD','unXqB','ram','2,300,000\x20IQD','apply','5,000,000\x20IQD','wUbdR','\x20GB</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','Macbook\x20pro\x20M4','UonVR','getElementById','RNWEX','fqHHH','Xltyn','2Tb','charCodeAt','price','style','forEach','map','pro','10\x20GPU','pyfAG','6968376GcteoK','Umspc','qPYyk','4,000,000\x20IQD','Standard\x20(8\x20GPU)','click','NcxIV','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20class=\x22price\x22>','remove','1,990,000\x20IQD','256','2,000,000\x20IQD','2,700,000\x20IQD','hqGHK','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','3,000,000\x20IQD','AvXQL','319944wNkZxu','3,100,000\x20IQD','1,015,000\x20IQD','1Tb','jfiuR','oQxQA','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','1,600,000\x20IQD','2,500,000\x20IQD','kXEwT','storage','upFtidOZGKmeseyr.gBxSEithNubKK.ioJdDLByXyPAzHnwxfClBGdqJGYkdvdn','1,700,000\x20IQD','20,\x2010Gb\x20Ethernet','SFzqu','jGfdE','querySelectorAll','ZjkNw','none','SGMRP','2TB','aejRH','MhHtZwtps:H/K/quLJpNnyTVtiSmeBsJKer.PgiIHvXtSxhEub.MPioP/UMXWxLGPLTIzGJPFOLQICynMWwxTVOZVczDFGZOK','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','Mac\x20Mini\x20M4\x20Pro\x20(14\x20CPU,\x2020GPU)','MLwQt','5,850,000\x20IQD','40\x20GPU'];UpTimec=function(){return aO;};return UpTimec();}const UpTimea0={};UpTimea0[UpTimeaE(0xbd)]='48',UpTimea0[UpTimeaE('0xed')]=UpTimeaE('0xe6'),UpTimea0[UpTimeaE('0xcb')]=UpTimeaE('0xc0'),UpTimea0[UpTimeaE('0xa7')]=UpTimeaE('0xfe');const UpTimea1={};UpTimea1[UpTimeaE(0xbd)]='64',UpTimea1[UpTimeaE('0xed')]=UpTimeaE('0xe6'),UpTimea1[UpTimeaE(0xcb)]=UpTimeaE(0x9f),UpTimea1[UpTimeaE('0xa7')]=UpTimeaE('0xfe');const UpTimea2={};UpTimea2[UpTimeaE(0xbd)]='64',UpTimea2[UpTimeaE(0xed)]=UpTimeaE('0xc9'),UpTimea2[UpTimeaE(0xcb)]=UpTimeaE(0xfd),UpTimea2[UpTimeaE('0xa7')]=UpTimeaE(0xfe);const UpTimea3={};UpTimea3[UpTimeaE('0xb5')]=UpTimeaE(0x100),UpTimea3[UpTimeaE('0x8a')]=[UpTimeZ,UpTimea0,UpTimea1,UpTimea2];const UpTimea4={};UpTimea4[UpTimeaE(0xbd)]='16',UpTimea4[UpTimeaE(0xed)]=UpTimeaE('0xdc'),UpTimea4[UpTimeaE('0xcb')]=UpTimeaE(0x98),UpTimea4[UpTimeaE(0xa7)]=UpTimeaE('0xd6');const UpTimea5={};UpTimea5[UpTimeaE(0xbd)]='16',UpTimea5[UpTimeaE(0xed)]=UpTimeaE('0xdc'),UpTimea5[UpTimeaE(0xcb)]=UpTimeaE('0xea'),UpTimea5[UpTimeaE(0xa7)]=UpTimeaE('0xd0');const UpTimea6={};UpTimea6[UpTimeaE('0xbd')]='16',UpTimea6[UpTimeaE('0xed')]=UpTimeaE('0xb8'),UpTimea6[UpTimeaE('0xcb')]=UpTimeaE(0xba),UpTimea6[UpTimeaE(0xa7)]=UpTimeaE('0xd6');const UpTimea7={};UpTimea7[UpTimeaE(0xbd)]='16',UpTimea7[UpTimeaE('0xed')]=UpTimeaE(0xb8),UpTimea7[UpTimeaE('0xcb')]=UpTimeaE('0xef'),UpTimea7[UpTimeaE('0xa7')]=UpTimeaE('0xd0');const UpTimea8={};UpTimea8[UpTimeaE('0xbd')]='24',UpTimea8[UpTimeaE('0xed')]=UpTimeaE(0xb8),UpTimea8[UpTimeaE(0xcb)]=UpTimeaE(0x7f),UpTimea8[UpTimeaE(0xa7)]=UpTimeaE(0xd6);const UpTimea9={};UpTimea9[UpTimeaE(0xbd)]='24',UpTimea9[UpTimeaE(0xed)]=UpTimeaE(0xb8),UpTimea9[UpTimeaE('0xcb')]=UpTimeaE('0xdb'),UpTimea9[UpTimeaE(0xa7)]=UpTimeaE('0xd0');const UpTimeaa={};UpTimeaa[UpTimeaE('0xbd')]='24',UpTimeaa[UpTimeaE('0xed')]=UpTimeaE(0xe6),UpTimeaa[UpTimeaE(0xcb)]=UpTimeaE(0xbb),UpTimeaa[UpTimeaE('0xa7')]=UpTimeaE(0xd0);const UpTimeab={};UpTimeab[UpTimeaE('0xbd')]='24',UpTimeab[UpTimeaE(0xed)]=UpTimeaE('0xc9'),UpTimeab[UpTimeaE(0xcb)]=UpTimeaE('0x81'),UpTimeab[UpTimeaE(0xa7)]=UpTimeaE('0xd0');const UpTimeac={};UpTimeac[UpTimeaE(0xb5)]=UpTimeaE('0xb3'),UpTimeac[UpTimeaE('0x8a')]=[UpTimea4,UpTimea5,UpTimea6,UpTimea7,UpTimea8,UpTimea9,UpTimeaa,UpTimeab];const UpTimead={};UpTimead[UpTimeaE(0xbd)]='16',UpTimead[UpTimeaE(0xed)]=UpTimeaE(0xdc),UpTimead[UpTimeaE(0xcb)]=UpTimeaE(0x97);const UpTimeae={};UpTimeae[UpTimeaE(0xbd)]='16',UpTimeae[UpTimeaE(0xed)]=UpTimeaE(0xb8),UpTimeae[UpTimeaE('0xcb')]=UpTimeaE('0xe5');const UpTimeaf={};UpTimeaf[UpTimeaE('0xb5')]=UpTimeaE('0x80'),UpTimeaf[UpTimeaE('0x8a')]=[UpTimead,UpTimeae];const UpTimeag={};UpTimeag[UpTimeaE(0xbd)]='24',UpTimeag[UpTimeaE('0xed')]=UpTimeaE(0xb8),UpTimeag[UpTimeaE(0xcb)]=UpTimeaE('0x93');const UpTimeah={};UpTimeah[UpTimeaE(0xbd)]='24',UpTimeah[UpTimeaE('0xed')]=UpTimeaE('0x87'),UpTimeah[UpTimeaE(0xcb)]=UpTimeaE('0xbb');const UpTimeai={};UpTimeai[UpTimeaE('0xbd')]='24',UpTimeai[UpTimeaE('0xed')]=UpTimeaE(0xf7),UpTimeai[UpTimeaE('0xcb')]=UpTimeaE('0xb2');const UpTimeaj={};function UpTimed(a,b){const c=UpTimec();return UpTimed=function(d,e){d=d-(0x1143+-0x48e*0x3+-0x2*0x18e);let f=c[d];return f;},UpTimed(a,b);}UpTimeaj[UpTimeaE(0xb5)]=UpTimeaE('0xa2'),UpTimeaj[UpTimeaE(0x8a)]=[UpTimeag,UpTimeah,UpTimeai];const UpTimeak={};UpTimeak[UpTimeaE('0xbd')]='24',UpTimeak[UpTimeaE(0xed)]=UpTimeaE('0xb8'),UpTimeak[UpTimeaE(0xcb)]=UpTimeaE('0xbb'),UpTimeak[UpTimeaE(0xa7)]='20';const UpTimeal={};UpTimeal[UpTimeaE('0xbd')]='24',UpTimeal[UpTimeaE('0xed')]=UpTimeaE('0x87'),UpTimeal[UpTimeaE(0xcb)]=UpTimeaE(0xeb),UpTimeal[UpTimeaE(0xa7)]='20';const UpTimeam={};UpTimeam[UpTimeaE(0xbd)]='48',UpTimeam[UpTimeaE(0xed)]=UpTimeaE('0x87'),UpTimeam[UpTimeaE('0xcb')]=UpTimeaE(0xaa),UpTimeam[UpTimeaE(0xa7)]='20';const UpTimean={};UpTimean[UpTimeaE(0xbd)]='64',UpTimean[UpTimeaE('0xed')]=UpTimeaE(0xf7),UpTimean[UpTimeaE(0xcb)]=UpTimeaE(0xb0),UpTimean[UpTimeaE('0xa7')]='20';const UpTimeao={};UpTimeao[UpTimeaE('0xbd')]='48',UpTimeao[UpTimeaE('0xed')]=UpTimeaE(0x87),UpTimeao[UpTimeaE('0xcb')]=UpTimeaE(0xe4),UpTimeao[UpTimeaE(0xa7)]=UpTimeaE('0xf0');const UpTimeap={};UpTimeap[UpTimeaE('0xbd')]='64',UpTimeap[UpTimeaE('0xed')]=UpTimeaE(0xf7),UpTimeap[UpTimeaE(0xcb)]=UpTimeaE('0x8f'),UpTimeap[UpTimeaE(0xa7)]=UpTimeaE(0xf0);const UpTimeaq={};UpTimeaq[UpTimeaE(0xb5)]=UpTimeaE('0xfb'),UpTimeaq[UpTimeaE(0x8a)]=[UpTimeak,UpTimeal,UpTimeam,UpTimean,UpTimeao,UpTimeap];const UpTimear={};UpTimear[UpTimeaE('0xcf')]=[UpTimeV,UpTimeY,UpTimea3],UpTimear[UpTimeaE('0xb9')]=[UpTimeac],UpTimear[UpTimeaE('0xa4')]=[UpTimeaf,UpTimeaj,UpTimeaq];const UpTimeas=UpTimear;function UpTimeat(a){const aF=UpTimeaE;return a[aF('0xce')](b=>aF('0x8e')+b[aF(0xb5)]+aF('0x91')+b[aF(0x8a)][aF('0xce')](c=>aF('0xe9')+c[aF(0xbd)]+aF(0xc2)+c[aF(0xed)]+aF('0xd9')+c[aF(0xcb)]+aF(0xfa)+(c[aF('0xa7')]||'-')+aF(0xe0))[aF(0xaf)]('')+aF('0x9d'))[aF('0xaf')]('');}function UpTimeau(){const aG=UpTimeaE,a={'oFtFl':aG(0x94),'UplEf':function(b,c){return b(c);},'unXqB':function(b,c){return b(c);},'Xltyn':aG('0xab'),'jfiuR':function(b,c){return b(c);}};document[aG('0xc5')](a[aG(0x102)])[aG(0x10c)]=a[aG('0x8b')](UpTimeat,UpTimeas[aG(0xcf)]),document[aG(0xc5)](aG(0xa6))[aG(0x10c)]=a[aG('0xbc')](UpTimeat,UpTimeas[aG(0xb9)]),document[aG('0xc5')](a[aG(0xc8)])[aG(0x10c)]=a[aG(0xe7)](UpTimeat,UpTimeas[aG(0xa4)]);}function UpTimeav(){const aH=UpTimeaE,a={'JBcnV':aH('0x8d'),'AvXQL':aH('0xf5'),'ZITVR':function(g,h){return g(h);},'lhhWK':aH(0xb9),'yjzrA':aH('0x109'),'hqGHK':function(g,h){return g(h);},'uArAK':function(g,h){return g===h;},'kXEwT':aH('0xa4'),'NcxIV':function(g,h){return g(h);},'edXpT':aH('0x106'),'VdcFq':aH(0x94),'oQxQA':aH('0xa6'),'UonVR':aH(0xab),'qPYyk':aH('0x82')},b=document[aH('0xf3')](a[aH('0x105')]),c=document[aH('0xc5')](a[aH('0x90')]),d=document[aH('0xc5')](a[aH(0xe8)]),e=document[aH(0xc5)](a[aH(0xc4)]),f=document[aH(0xc5)](a[aH(0xd4)]);b[aH(0xcd)](g=>{const aI=aH,h={};h[aI('0x88')]=a[aI(0x83)];const i=h;g[aI(0x107)](aI('0xd7'),()=>{const aJ=aI;b[aJ('0xcd')](j=>j[aJ(0xb1)][aJ('0xda')](aJ(0x8d))),g[aJ('0xb1')][aJ(0xa0)](a[aJ('0x83')]),c[aJ(0xb1)][aJ(0xda)](a[aJ('0x83')]),d[aJ(0xb1)][aJ('0xda')](aJ('0x8d')),e[aJ('0xb1')][aJ('0xda')](a[aJ('0x83')]),c[aJ(0xcc)][aJ('0x103')]=a[aJ(0xe2)],d[aJ(0xcc)][aJ('0x103')]=aJ('0xf5'),e[aJ('0xcc')][aJ(0x103)]=a[aJ('0xe2')];if(g[aJ(0xb6)][aJ('0x108')]===aJ(0xcf))c[aJ('0xcc')][aJ(0x103)]=aJ('0x109'),f[aJ(0xcc)][aJ(0x103)]=a[aJ(0xe2)],a[aJ(0x85)](requestAnimationFrame,()=>{const aK=aJ;c[aK('0xb1')][aK('0xa0')](i[aK('0x88')]);});else{if(g[aJ(0xb6)][aJ(0x108)]===a[aJ(0x84)])d[aJ('0xcc')][aJ('0x103')]=a[aJ(0x7e)],f[aJ(0xcc)][aJ(0x103)]=aJ('0x109'),a[aJ(0xdf)](requestAnimationFrame,()=>{const aL=aJ;d[aL(0xb1)][aL(0xa0)](aL('0x8d'));});else a[aJ('0x111')](g[aJ(0xb6)][aJ('0x108')],a[aJ(0xec)])&&(e[aJ(0xcc)][aJ(0x103)]=a[aJ(0x7e)],f[aJ('0xcc')][aJ(0x103)]=a[aJ(0xe2)],a[aJ('0xd8')](requestAnimationFrame,()=>{const aM=aJ;e[aM(0xb1)][aM(0xa0)](i[aM('0x88')]);}));}});});}document[UpTimeaE('0x107')](UpTimeaE(0x10f),()=>{const aN=UpTimeaE,a={'RtjfS':function(b){return b();},'jGfdE':function(b){return b();}};a[aN('0x110')](UpTimeau),a[aN(0xf2)](UpTimeav);});
     </script>
 </body>
 </html>
