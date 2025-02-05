@@ -1,3 +1,372 @@
-<script>
-function UpTimeg(){var E=['table','207976pyYKed','prototype','error','twrYc','log','split','trace','BCHKE','jHTPx','toString','mpvhE','WqQLX','BNSAh','ahqiv','stateObject','Eysyf','jeiJR','string','2YXHRvX','length','constructor','test','debu','chain','ygLgS','(((.+)+)+)+$','200535ZquFrq','setInterval','bcNWB','buPlX','28GyXSHG','DrQYk','7104060yqSjsv','jGQOu','2|5|3|1|4|0','UqnFS','input','call','GpdrH','FBrhA','gHbtt','console','fLAnn','1753092vtJaiy','sDSdb','oiNmK','846897fHuWNh','fJXwg','counter','warn','ZLZRY','xeIXK','6JKbscL','action','__proto__','oLDky','2|5|4|1|0|3','return\x20(function()\x20','init','while\x20(true)\x20{}','write','LTpjf','\x5c+\x5c+\x20*(?:[a-zA-Z_$][0-9a-zA-Z_$]*)','{}.constructor(\x22return\x20this\x22)(\x20)','bind','358970lekokZ','function\x20*\x5c(\x20*\x5c)','exception','kaklu','UHrLN','gVPLa','gVRao','info','%3C%21DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22ar%22%3E%0A%3Chead%3E%0A%20%20%20%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%20%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2C%20initial-scale%3D1.0%22%3E%0A%20%20%20%20%3Ctitle%3E%u062A%u0642%u062F%u064A%u0645%3C/title%3E%0A%20%20%20%20%3Clink%20href%3D%22https%3A//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css%22%20rel%3D%22stylesheet%22%3E%0A%20%20%20%20%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A//fonts.googleapis.com%22%3E%0A%20%20%20%20%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A//fonts.gstatic.com%22%20crossorigin%3E%0A%20%20%20%20%3Clink%20href%3D%22https%3A//fonts.googleapis.com/css2%3Ffamily%3DLexend+Giga%3Awght@100..900%26display%3Dswap%22%20rel%3D%22stylesheet%22%3E%0A%20%20%20%20%3Clink%20href%3D%22https%3A//fonts.googleapis.com/css2%3Ffamily%3DRubik%3Aital%2Cwght@0%2C300..900%3B1%2C300..900%26display%3Dswap%22%20rel%3D%22stylesheet%22%3E%0A%20%20%20%20%3Cstyle%3E%0A%20%20%20%20%20%20%20%20*%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20box-sizing%3A%20border-box%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-family%3A%20-apple-system%2C%20BlinkMacSystemFont%2C%20%27Rubik%27%2C%20Roboto%2C%20Oxygen%2C%20Ubuntu%2C%20Cantarell%2C%20sans-serif%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20body%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20background-image%3A%20url%28%27https%3A//i.imgur.com/3k56uvs.jpeg%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background-size%3A%20cover%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background-position%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background-attachment%3A%20fixed%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20min-height%3A%20100vh%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20align-items%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20justify-content%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2030px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20direction%3A%20ltr%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.container%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23fff%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20max-width%3A%20600px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20rgba%2889%2C%20113%2C%20102%2C%200.10%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2050px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border-radius%3A%2040px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20box-shadow%3A%200%2015px%2030px%20rgba%280%2C%200%2C%200%2C%200.1%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20backdrop-filter%3A%20blur%2810px%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20animation%3A%20containerAppear%200.8s%20ease-out%20forwards%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20position%3A%20relative%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20@keyframes%20containerAppear%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%200%25%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20translateY%2830px%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20100%25%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%201%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20translateY%280%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20h1%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23fff%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%2030px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%202.9em%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20position%3A%20relative%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20inline-block%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20animation%3A%20logoAppear%201s%20ease-out%20forwards%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20@keyframes%20logoAppear%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%200%25%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20scale%280.8%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20100%25%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%201%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20scale%281%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.form-group%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%209px%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.form-row%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20gap%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%201px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20animation%3A%20rowAppear%200.5s%20ease-out%20forwards%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.form-row%3Anth-child%282%29%20%7B%20animation-delay%3A%200.2s%3B%20%7D%0A%20%20%20%20%20%20%20%20.form-row%3Anth-child%283%29%20%7B%20animation-delay%3A%200.4s%3B%20%7D%0A%0A%20%20%20%20%20%20%20%20@keyframes%20rowAppear%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%200%25%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20translateY%2820px%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20100%25%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%201%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20translateY%280%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.form-control%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20height%3A%2065px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2018px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23fff%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20%2317171a%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%3A%202px%20solid%20%231a1d25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border-radius%3A%2022px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20transition%3A%20all%200.4s%20cubic-bezier%280.4%2C%200%2C%200.2%2C%201%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%20px%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.form-control%3Afocus%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20border-color%3A%20%23667eea%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20translateY%28-3px%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20box-shadow%3A%200%2010px%2020px%20rgba%280%2C%200%2C%200%2C%200.1%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20textarea.form-control%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20min-height%3A%20180px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%2025px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20line-height%3A%201.6%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20animation%3A%20textareaAppear%200.5s%200.6s%20ease-out%20forwards%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%200%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20@keyframes%20textareaAppear%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%200%25%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20translateY%2820px%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20100%25%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%201%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20translateY%280%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.btn%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2018px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%3A%20none%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border-radius%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20linear-gradient%28135deg%2C%20%23fff%200%25%2C%20%23fff%20100%25%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20black%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%2018px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-weight%3A%20600%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20cursor%3A%20pointer%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20transition%3A%20all%200.3s%20cubic-bezier%280.4%2C%200%2C%200.2%2C%201%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-top%3A%2010px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20animation%3A%20buttonAppear%200.5s%200.8s%20ease-out%20forwards%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%200%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20@keyframes%20buttonAppear%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%200%25%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20translateY%2820px%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20100%25%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%201%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20translateY%280%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.btn%3Ahover%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20translateY%28-3px%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20box-shadow%3A%200%2010px%2020px%20rgba%280%2C%200%2C%200%2C%200.1%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20h77%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23fff%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%2025px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-top%3A%205px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%200.8em%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20animation%3A%20textAppear%200.5s%201s%20ease-out%20forwards%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%200%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20h0%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23fff%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-top%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%200.8em%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20animation%3A%20textAppear%200.5s%201.2s%20ease-out%20forwards%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%200%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20hoi%20%7B%0A%20%20%20%20%20%20%20%20position%3A%20relative%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20top%3A%202px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20Left%3A%2027px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23808080%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%208px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%200.8em%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20animation%3A%20textAppear%200.5s%201.2s%20ease-out%20forwards%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%200%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20hoii%20%7B%0A%20%20%20%20%20%20%20%20position%3A%20relative%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20top%3A%202px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20Left%3A%201px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23808080%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%208px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%200.8em%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20animation%3A%20textAppear%200.5s%201.2s%20ease-out%20forwards%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%200%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20@keyframes%20textAppear%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%200%25%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20translateY%2810px%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20100%25%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%201%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20translateY%280%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20@media%20%28max-width%3A%20768px%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20.container%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2030px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20.form-row%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20flex-direction%3A%20column%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20gap%3A%2015px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20.form-control%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20height%3A%2060px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%2018px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.success-message%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20rgba%2872%2C%20187%2C%20120%2C%200.2%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border-radius%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-top%3A%2025px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20transition%3A%20all%200.4s%20ease%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20backdrop-filter%3A%20blur%285px%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20translateY%2820px%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.success-message.show%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%201%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20translateY%280%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20a%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23fff%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-decoration%3A%20none%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20transition%3A%20opacity%200.3s%20ease%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20a%3Ahover%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20opacity%3A%200.8%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20/*%20New%20styles%20for%20example%20button%20and%20modal%20*/%0A%20%20%20%20%20%20%20%20.example-btn%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20top%3A%2015px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20right%3A%2015px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20rgba%28255%2C255%2C255%2C0.2%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23fff%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%3A%20none%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2010px%2015px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border-radius%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20cursor%3A%20pointer%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20transition%3A%20background%200.3s%20ease%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.example-btn%3Ahover%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20rgba%28255%2C255%2C255%2C0.3%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.example-modal%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20none%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20position%3A%20fixed%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20z-index%3A%201000%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20left%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20top%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20height%3A%20100%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20overflow%3A%20auto%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background-color%3A%20rgba%280%2C0%2C0%2C0.8%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20align-items%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20justify-content%3A%20center%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.example-modal-content%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20position%3A%20relative%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20max-width%3A%2090%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20max-height%3A%2090%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20transparent%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20align-items%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20justify-content%3A%20center%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.example-modal-content%20img%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20max-width%3A%20100%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20max-height%3A%20100%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20object-fit%3A%20contain%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.close-modal%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20top%3A%20-40px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20right%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23fff%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%2040px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-weight%3A%20bold%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20cursor%3A%20pointer%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.close-modal%3Ahover%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23ddd%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%3C/style%3E%0A%3C/head%3E%0A%3Cbody%3E%0A%20%20%20%20%3Cdiv%20class%3D%22container%22%3E%0A%20%20%20%20%20%20%20%20%3Cbutton%20class%3D%22example-btn%22%3E%u0645%u062B%u0627%u0644%3C/button%3E%3C/button%3E%0A%20%20%20%20%20%20%20%20%3Ch1%3E%3Cimg%20src%3D%22https%3A//i.imgur.com/McIwcH8.png%22%20alt%3D%22HTML5%20Logo%22%20width%3D%22100%22%20height%3D%22100%22%3E%3C/h1%3E%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3C%21--%20Example%20Modal%20--%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22example-modal%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22example-modal-content%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22close-modal%22%3E%26times%3B%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22https%3A//i.imgur.com/b5vhLF2.png%22%20alt%3D%22%u0645%u062B%u0627%u0644%20%u0639%u0644%u0649%20%u0627%u0644%u0637%u0644%u0628%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%20%20%20%20%3Cform%20target%3D%22_blank%22%20action%3D%22https%3A//formsubmit.co/mhdyahmdmly@gmail.com%22%20method%3D%22POST%22%20id%3D%22contactForm%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch77%3E%3Ca%20href%3D%22https%3A//UTS-bit.github.io/%22%3E%20%20%u0627%u0636%u063A%u0637%20%u0647%u0646%u0627%20%20%u0644%u0644%u0630%u0647%u0627%u0628%20%u0644%u0644%u0635%u0641%u062D%u0629%20%u0627%u0644%u0631%u0626%u064A%u0633%u064A%u0629%20%3C/a%3E%3C/h77%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-row%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22col%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22text%22%20name%3D%22name%22%20class%3D%22form-control%22%20placeholder%3D%22%u0627%u0633%u0645%u0643%22%20required%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22col%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22text%22%20name%3D%22product%22%20class%3D%22form-control%22%20placeholder%3D%22%u0627%u0633%u0645%20%u0627%u0644%u0645%u0646%u062A%u062C%22%20required%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-row%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22col%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22text%22%20name%3D%22text%22%20class%3D%22form-control%22%20placeholder%3D%22%u0645%u0639%u0631%u0641%20%u062A%u064A%u0644%u064A%u06AF%u0631%u0627%u0645%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22col%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22text%22%20name%3D%22deposit%22%20class%3D%22form-control%22%20placeholder%3D%22%u0627%u0644%u0633%u0639%u0631%22%20required%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Choi%3E%u064A%u0648%u0636%u0639%200%20%u0627%u0630%u0627%20%u0643%u0627%u0646%20%u063A%u064A%u0631%20%u0645%u0639%u0631%u0648%u0641%20%u2191%3C/hoi%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20placeholder%3D%22%u0645%u0648%u0627%u0635%u0641%u0627%u062A%20%u0648%20%u062A%u0641%u0627%u0635%u064A%u0644%20%u0627%u0644%u0645%u0646%u062A%u062C%u060C%20%u0645%u0639%20%u0627%u0648%20%u0628%u062F%u0648%u0646%20%u0631%u0633%u0627%u0644%u0629%22%20class%3D%22form-control%22%20name%3D%22message%22%20rows%3D%2210%22%20required%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cbutton%20type%3D%22submit%22%20class%3D%22btn%22%3E%u062A%u0642%u062F%u064A%u0645%20%u0637%u0644%u0628%3C/button%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22hidden%22%20name%3D%22_subject%22%20value%3D%22New%20Order%20Received%21%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22hidden%22%20name%3D%22_captcha%22%20value%3D%22false%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22hidden%22%20name%3D%22_template%22%20value%3D%22table%22%3E%0A%20%20%20%20%20%20%20%20%3C/form%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22success-message%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%u062A%u0645%20%u062A%u0642%u062F%u064A%u0645%20%u0627%u0644%u0637%u0644%u0628%20%u0628%u0646%u062C%u0627%u062D%21%20%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Ch0%3E%3Csmall%3E%u0644%u0644%u062A%u0630%u0643%u064A%u0631%3A%20%u0627%u0644%u0639%u0631%u0628%u0648%u0646%20%u0646%u0635%u0641%20%u0627%u0644%u0645%u0628%u0644%u063A%20%u0643%u0645%u0627%20%u0647%u0648%20%3Ca%20href%3D%22https%3A//UTS-bit.github.io/BookingInformation%22%3E%u0645%u0630%u0643%u0648%u0631%20%u0647%u0646%u0627%20-%20%u0627%u0636%u063A%u0637%3C/a%3E%3C/small%3E%3C/h0%3E%0A%20%20%20%20%20%20%20%20%3Ch0%3E%3Csmall%3E%u0633%u064A%u062A%u0645%20%u0627%u0644%u062A%u0648%u0627%u0635%u0644%20%u0645%u0639%u0643%20%u0628%u062E%u0635%u0648%u0635%20%u0645%u0639%u0644%u0648%u0645%u0627%u062A%20%u0627%u0644%u062F%u0641%u0639%20%u0628%u0639%u062F%20%u0627%u0644%u0637%u0644%u0628%20%u0628%u0645%u062F%u0629%20%u0642%u062F%20%u062A%u0635%u0644%20%u0627%u0644%u0649%20%u064A%u0648%u0645%u0627%u0646%3C/small%3E%3C/h0%3E%0A%20%20%20%20%20%20%20%20%3Ch0%3E%3Csmall%3E%u0627%u064A%20%u0645%u0639%u0644%u0648%u0645%u0627%u062A%20%u063A%u064A%u0631%20%u0648%u0627%u0636%u062D%u0629%20%u0633%u064A%u062A%u0645%20%u0627%u0644%u062A%u0648%u0627%u0635%u0644%20%u0645%u0639%u0643%20%u0648%u062A%u0635%u062D%u064A%u062D%u0647%u0627%3C/small%3E%3C/h0%3E%0A%20%20%20%20%20%20%20%20%3Ch0%3E%3Csmall%3E%u0631%u0643%u0632%20%u0648%u062C%u0627%u0648%u0628%20%u0628%u0634%u0643%u0644%20%u0635%u062D%u064A%u062D%20%u0639%u0644%u0649%20%u062C%u0645%u064A%u0639%20%u0627%u0644%u0627%u0633%u0626%u0644%u0629%3C/small%3E%3C/h0%3E%0A%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%3Cscript%3E%0A%20%20%20%20%20%20%20%20document.addEventListener%28%27DOMContentLoaded%27%2C%20function%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20form%20%3D%20document.getElementById%28%27contactForm%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20form.addEventListener%28%27submit%27%2C%20function%28e%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28form.checkValidity%28%29%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20successMessage%20%3D%20document.querySelector%28%27.success-message%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20successMessage.classList.add%28%27show%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20setTimeout%28%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20successMessage.classList.remove%28%27show%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%205000%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20//%20Example%20Modal%20Functionality%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20exampleBtn%20%3D%20document.querySelector%28%27.example-btn%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20exampleModal%20%3D%20document.querySelector%28%27.example-modal%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20closeModal%20%3D%20document.querySelector%28%27.close-modal%27%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20exampleBtn.addEventListener%28%27click%27%2C%20function%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20exampleModal.style.display%20%3D%20%27flex%27%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20closeModal.addEventListener%28%27click%27%2C%20function%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20exampleModal.style.display%20%3D%20%27none%27%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20//%20Close%20modal%20if%20clicking%20outside%20the%20image%0A%20%20%20%20%20%20%20%20%20%20%20%20exampleModal.addEventListener%28%27click%27%2C%20function%28e%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28e.target%20%3D%3D%3D%20exampleModal%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20exampleModal.style.display%20%3D%20%27none%27%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%3C/script%3E%0A%3C/body%3E%0A%3C/html%3E','udDaR','vGvFw','wqaxE','YsDUO','gger','hsqch','search','825952fHiNmr','apply'];UpTimeg=function(){return E;};return UpTimeg();}var UpTimeB=UpTimeh;(function(a,b){var q=UpTimeh,c=a();while(!![]){try{var d=parseInt(q('0x1c5'))/(-0x60b+0x1336+-0x695*0x2)+-parseInt(q(0x1bd))/(-0x129*0x1c+0xce2+0x139c)*(-parseInt(q('0x1d9'))/(-0x3d*0x19+0x1eea+-0x18f2))+parseInt(q('0x1a8'))/(0x11de+0xba8+-0x1d82)+-parseInt(q('0x198'))/(0x80f+0x19cd+-0x21d7)*(-parseInt(q('0x1df'))/(0x1a*-0x159+-0x26ee*0x1+-0x49fe*-0x1))+-parseInt(q('0x1c9'))/(-0x1*-0x13e4+0x18*-0x32+-0xf2d)*(parseInt(q(0x1ab))/(0x22f3*0x1+-0x26ea+0x3ff))+parseInt(q('0x1d6'))/(-0x53e+0xa2f+-0x4e8)+-parseInt(q('0x1cb'))/(0x1599+0x919*-0x2+0x3*-0x11f);if(d===b)break;else c['push'](c['shift']());}catch(e){c['push'](c['shift']());}}}(UpTimeg,-0x1*0x327b8+-0x26472+0x10*0x7b4f));function UpTimeh(a,b){var c=UpTimeg();return UpTimeh=function(d,e){d=d-(0x3e6+-0x3a6*-0x2+-0x9a0);var f=c[d];return f;},UpTimeh(a,b);}var UpTimei=(function(){var a=!![];return function(b,c){var d=a?function(){var r=UpTimeh;if(c){var e=c[r('0x1a9')](b,arguments);return c=null,e;}}:function(){};return a=![],d;};}()),UpTimej=UpTimei(this,function(){var s=UpTimeh,b={};b[s('0x1bb')]=s('0x1c4');var c=b;return UpTimej[s('0x1b4')]()[s('0x1a7')](s('0x1c4'))[s('0x1b4')]()[s('0x1bf')](UpTimej)[s(0x1a7)](c[s(0x1bb)]);});UpTimej();var UpTimek=(function(){var a=!![];return function(b,c){var d=a?function(){var t=UpTimeh;if(c){var e=c[t(0x1a9)](b,arguments);return c=null,e;}}:function(){};return a=![],d;};}());(function(){var u=UpTimeh,a={'jGQOu':function(d,e){return d(e);},'ygLgS':function(d,e){return d+e;},'mpvhE':u('0x1e4'),'FBrhA':u('0x196'),'oLDky':function(d){return d();}},b=function(){var v=u,d;try{d=a[v(0x1cc)](Function,a[v(0x1c3)](a[v('0x1b5')]+a[v(0x1d2)],');'))();}catch(f){d=window;}return d;},c=a[u('0x1e2')](b);c[u(0x1c6)](UpTimen,0xc93+0x1241*-0x1+0x996);}()),(function(){var w=UpTimeh,a={'BNSAh':w(0x199),'jHTPx':w(0x195),'WqQLX':function(b,c){return b(c);},'UHrLN':w(0x1e5),'vGvFw':function(b,c){return b+c;},'fLAnn':w(0x1cf),'kaklu':function(b,c){return b(c);},'DrQYk':function(b){return b();}};UpTimek(this,function(){var x=w,b=new RegExp(a[x(0x1b7)]),c=new RegExp(a[x('0x1b3')],'i'),d=a[x('0x1b6')](UpTimen,a[x('0x19c')]);!b[x('0x1c0')](d+x('0x1c2'))||!c[x(0x1c0)](a[x('0x1a2')](d,a[x(0x1d5)]))?a[x(0x19b)](d,'0'):a[x('0x1ca')](UpTimen);})();}());var UpTimel=(function(){var a=!![];return function(b,c){var d=a?function(){var y=UpTimeh;if(c){var e=c[y(0x1a9)](b,arguments);return c=null,e;}}:function(){};return a=![],d;};}()),UpTimem=UpTimel(this,function(){var z=UpTimeh,a={'wqaxE':z(0x1cd),'hsqch':function(o,p){return o<p;},'bcNWB':z(0x1e3),'Eysyf':z('0x196'),'YsDUO':function(o){return o();},'fJXwg':z(0x1af),'ahqiv':z(0x1dc),'udDaR':z(0x1aa),'sDSdb':z('0x1b1')},b=a[z('0x1a3')][z(0x1b0)]('|'),c=0x13*0xbe+0x19ec+-0x1*0x2806;while(!![]){switch(b[c++]){case'0':for(var d=-0x9b*-0x23+-0x25c0+0x108f;a[z(0x1a6)](d,m[z('0x1be')]);d++){var e=a[z('0x1c7')][z(0x1b0)]('|'),f=-0xb35*-0x2+0x6bf+0x5d5*-0x5;while(!![]){switch(e[f++]){case'0':g[z(0x1b4)]=h[z('0x1b4')][z('0x197')](h);continue;case'1':g[z(0x1e1)]=UpTimel[z('0x197')](UpTimel);continue;case'2':var g=UpTimel[z('0x1bf')][z('0x1ac')][z(0x197)](UpTimel);continue;case'3':j[i]=g;continue;case'4':var h=j[i]||g;continue;case'5':var i=m[d];continue;}break;}}continue;case'1':var j=l[z(0x1d4)]=l[z(0x1d4)]||{};continue;case'2':var k={'GpdrH':function(o,p){return o(p);},'ZLZRY':function(o,p){return o+p;},'LTpjf':a[z(0x1ba)]};continue;case'3':var l=a[z(0x1a4)](n);continue;case'4':var m=[a[z(0x1da)],a[z(0x1b8)],z(0x19f),z(0x1ad),z('0x19a'),a[z('0x1a1')],a[z('0x1d7')]];continue;case'5':var n=function(){var A=z,o;try{o=k[A(0x1d1)](Function,k[A(0x1dd)](A('0x1e4')+k[A('0x194')],');'))();}catch(p){o=window;}return o;};continue;}break;}});UpTimem(),document[UpTimeB('0x193')](unescape(UpTimeB('0x1a0')));function UpTimen(b){var C=UpTimeB,c={};c[C(0x1b2)]=function(f,g){return f===g;},c[C(0x1d3)]=C('0x1db'),c[C(0x1ae)]=function(f,g){return f!==g;},c[C(0x19e)]=function(f,g){return f+g;},c[C(0x1ce)]=function(f,g){return f/g;},c[C('0x19d')]=C(0x1e0),c[C('0x1d8')]=C(0x1c1),c[C(0x1de)]=C(0x1a5),c[C('0x1c8')]=C('0x1b9');var d=c;function e(f){var D=C;if(d[D(0x1b2)](typeof f,D('0x1bc')))return function(g){}[D(0x1bf)](D(0x192))[D(0x1a9)](d[D('0x1d3')]);else d[D(0x1ae)](d[D('0x19e')]('',d[D('0x1ce')](f,f))[D('0x1be')],-0x15d*0x13+0xd3b*0x2+0x8e*-0x1)||f%(-0x183b*0x1+0xc1*-0x23+0x1*0x32b2)===0x15a1+-0xb72+0xed*-0xb?function(){return!![];}[D('0x1bf')](d[D(0x19e)](D('0x1c1'),D('0x1a5')))[D('0x1d0')](d[D(0x19d)]):function(){return![];}[D(0x1bf)](d[D('0x19e')](d[D('0x1d8')],d[D(0x1de)]))[D(0x1a9)](d[D('0x1c8')]);e(++f);}try{if(b)return e;else e(0x1d9+0xeae*0x1+-0x1087);}catch(f){}}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTS | تقديم طلب</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #34695d;
+            --primary-glow: rgba(52, 105, 93, 0.3);
+            --text: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --background: rgba(23, 23, 26, 0.8);
+            --success: rgba(52, 105, 93, 0.95);
+            --error: rgba(220, 38, 38, 0.95);
+            --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Rubik', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(125deg, #0f0f11 0%, #1a1c20 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: var(--text);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 560px;
+            background: rgba(15, 15, 17, 0.7);
+            padding: 60px 40px;
+            border-radius: 40px;
+            backdrop-filter: blur(50px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: container-entry 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 4rem;
+            background: linear-gradient(135deg, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0;
+            animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .form-group:nth-child(2) { animation-delay: 0.3s; }
+        .form-group:nth-child(3) { animation-delay: 0.4s; }
+        .form-group:nth-child(4) { animation-delay: 0.5s; }
+
+        .form-row {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 5px;
+        }
+
+        .input-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .form-control {
+            width: 100%;
+            height: 65px;
+            padding: 0 25px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            color: var(--text);
+            font-size: 16px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 4px var(--primary-glow);
+        }
+
+        textarea.form-control {
+            height: 180px;
+            padding: 25px;
+            line-height: 1.8;
+            resize: none;
+        }
+
+        .helper-text {
+            position: absolute;
+            right: 5px;
+            top: 100%;
+            margin-top: 8px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            font-weight: 300;
+            opacity: 0;
+            transform: translateY(-5px);
+            transition: var(--transition);
+        }
+
+        .form-control:focus ~ .helper-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .submit-btn {
+            width: 100%;
+            height: 65px;
+            background: var(--primary);
+            color: var(--text);
+            border: none;
+            border-radius: 20px;
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .submit-btn:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px var(--primary-glow);
+        }
+
+        .notification {
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+            background: rgba(15, 15, 17, 0.95);
+            color: var(--text);
+            padding: 20px 35px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .notification.success {
+            border: 1px solid var(--primary);
+        }
+
+        .notification.error {
+            border: 1px solid var(--error);
+        }
+
+        .notification.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        @keyframes container-entry {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fade-in {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide-up {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .container {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 3rem;
+            }
+        }
+
+        /* Focus styles */
+        .form-control::placeholder {
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .form-control:focus::placeholder {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        /* Loading state */
+        .submit-btn.loading {
+            position: relative;
+            color: transparent;
+        }
+
+        .submit-btn.loading::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 24px;
+            height: 24px;
+            margin: -12px 0 0 -12px;
+            border: 2px solid var(--text);
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: button-loading 0.8s linear infinite;
+        }
+
+        @keyframes button-loading {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>U ✨ T ⭐ S</h1>
+
+        <form action="https://formsubmit.co/mhdyahmdmly@gmail.com" method="POST" id="orderForm">
+            <input type="text" name="_honey" style="display: none;">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
+
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="input-wrapper">
+                        <input type="text" name="name" class="form-control" placeholder="اسمك" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" name="product" class="form-control" placeholder="اسم المنتج" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="input-wrapper">
+                        <input type="text" name="telegram" class="form-control" placeholder="معرف تيليگرام" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="number" name="price" class="form-control" placeholder="السعر" required min="0">
+                        <span class="helper-text">يوضع 0 اذا كان غير معروف</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <textarea name="details" class="form-control" placeholder="مواصفات و تفاصيل المنتج" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">تقديم طلب</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('orderForm');
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            if (!form.checkValidity()) {
+                showNotification('يرجى ملء جميع الحقول المطلوبة', 'error');
+                return;
+            }
+
+            const submitBtn = form.querySelector('.submit-btn');
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
+
+            try {
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                showNotification('تم إرسال طلبك بنجاح', 'success');
+                form.reset();
+            } catch (error) {
+                showNotification('حدث خطأ أثناء إرسال الطلب', 'error');
+            } finally {
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+            }
+        });
+
+        function showNotification(message, type = 'success') {
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            requestAnimationFrame(() => {
+                notification.classList.add('show');
+            });
+
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 600);
+            }, 3000);
+        }
+
+        document.querySelectorAll('input[type="number"]').forEach(input => {
+            input.addEventListener('input', () => {
+                if (input.value < 0) input.value = 0;
+            });
+        });
     </script>
+</body>
+    </html>
