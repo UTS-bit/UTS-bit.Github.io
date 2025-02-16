@@ -1,540 +1,808 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UTS | حساب الشحن</title>
-    
-        <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css"
-      >
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UTS | حساب الشحن</title>
 
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-solid.css"
-      >
+  <!-- Material Symbols -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-regular.css"
-      >
+  <!-- Google Fonts (IBM Plex Sans Arabic) -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-light.css"
-      >
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone.css"
-      />
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.7.2/css/brands.css"
-      />
-    <!-- React and ReactDOM -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #34695d;
-            --glow: rgba(52, 105, 93, 0.3);
-            --bg-gradient: linear-gradient(135deg, #161618 0%, #1a1a1d 100%);
-            --card-bg: linear-gradient(135deg, #161618 0%, #1a1a1d 100%);
-            --transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+  <!-- React and ReactDOM -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <style>
+    /* Material Design 3 Dark Theme Palette */
+    :root {
+      --md-sys-color-primary: #CAC4D0;
+      --md-sys-color-on-primary: #000;
+      --md-sys-color-primary-container: #D0BCFF;
+      --md-sys-color-on-primary-container: #d8e2ff;
+      --md-sys-color-secondary: #b3c9ff;
+      --md-sys-color-on-secondary: #003063;
+      --md-sys-color-secondary-container: #00478b;
+      --md-sys-color-on-secondary-container: #d9e2ff;
+      --md-sys-color-tertiary: #ffb3bb;
+      --md-sys-color-on-tertiary: #690005;
+      --md-sys-color-tertiary-container: #93000a;
+      --md-sys-color-on-tertiary-container: #ffdadc;
+      --md-sys-color-error: #ffb4ab;
+      --md-sys-color-error-container: #93000a;
+      --md-sys-color-on-error: #690005;
+      --md-sys-color-on-error-container: #ffdad6;
+      --md-sys-color-background: #1c1b1f;
+      --md-sys-color-on-background: #e6e1e6;
+      --md-sys-color-surface: #1c1b1f;
+      --md-sys-color-on-surface: #e6e1e6;
+      --md-sys-color-surface-variant: #48464c;
+      --md-sys-color-on-surface-variant: #c9c5d0;
+      --md-sys-color-outline: #939099;
+      --md-sys-color-inverse-on-surface: #313033;
+      --md-sys-color-inverse-surface: #e6e1e6;
+      --md-sys-color-inverse-primary: #abc2ff;
+      --md-sys-color-shadow: #000000;
+      --md-sys-color-surface-tint: #90caf9;
+      --md-sys-color-outline-variant: #48464c;
+      --md-sys-color-scrim: #000000;
 
-        body {
-            font-family: 'IBM Plex Sans Arabic', sans-serif;
-            background: var(--bg-gradient);
-            color: #fff;
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
-            padding: 20px;
-            line-height: 1.6;
-            perspective: 1000px;
-        }
+      /* Typography */
+      --md-sys-typescale-display-large-font-size: 67px;
+      --md-sys-typescale-display-medium-font-size: 50px;
+      --md-sys-typescale-display-small-font-size: 36px;
+      --md-sys-typescale-headline-large-font-size: 32px;
+      --md-sys-typescale-headline-medium-font-size: 35px;
+      --md-sys-typescale-headline-small-font-size: 24px;
+      --md-sys-typescale-title-large-font-size: 22px;
+      --md-sys-typescale-title-medium-font-size: 19px;
+      --md-sys-typescale-title-small-font-size: 14px;
+      --md-sys-typescale-body-large-font-size: 18px;
+      --md-sys-typescale-body-medium-font-size: 20px;
+      --md-sys-typescale-body-small-font-size: 14px;
+      --md-sys-typescale-label-large-font-size: 14px;
+      --md-sys-typescale-label-medium-font-size: 12px;
+      --md-sys-typescale-label-small-font-size: 11px;
 
-        .container {
-            width: 100%;
-            max-width: 440px;
-            transform-style: preserve-3d;
-        }
+      /* Spacing */
+      --md-sys-spacing-xsmall: 4px;
+      --md-sys-spacing-small: 8px;
+      --md-sys-spacing-medium: 16px;
+      --md-sys-spacing-large: 24px;
+      --md-sys-spacing-xlarge: 32px;
+      --md-sys-spacing-xxlarge: 48px;
 
-        .calculator {
-            background: var(--card-bg);
-            padding: 3rem 2rem;
-            border-radius: 30px;
-            backdrop-filter: blur(20px);
-            transform-style: preserve-3d;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
+      /* Shape */
+      --md-sys-shape-extra-small: 4px;
+      --md-sys-shape-small: 8px;
+      --md-sys-shape-medium: 12px;
+      --md-sys-shape-large: 16px;
+      --md-sys-shape-extra-large: 28px;
 
-        .calculator::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(
-                circle at var(--x, 50%) var(--y, 50%),
-                 0%,
-                transparent 50%
-            );
-            opacity: 0;
-            transition: opacity 0.5s;
-        }
+      /* Elevation */
+      --md-sys-elevation-0: 0px;
+      --md-sys-elevation-1: 1px;
+      --md-sys-elevation-2: 3px;
+      --md-sys-elevation-3: 6px;
+      --md-sys-elevation-4: 8px;
+      --md-sys-elevation-5: 12px;
 
-        .calculator:hover::before {
-            opacity: 1;
-        }
+      /* Transition */
+      --md-sys-motion-duration-short-1: 0.1s;
+      --md-sys-motion-duration-short-2: 0.2s;
+      --md-sys-motion-duration-medium-1: 0.3s;
+      --md-sys-motion-duration-medium-2: 0.4s;
+      --md-sys-motion-duration-long-1: 0.5s;
+      --md-sys-motion-duration-long-2: 0.6s;
 
-        h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 2rem;
-            background: linear-gradient(to right, #fff, var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
-            transform: translateZ(30px);
-        }
-
-        .unit-toggle {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.5rem;
-            border-radius: 15px;
-            transform: translateZ(20px);
-        }
-
-        .unit-toggle button {
-            background: transparent;
-            border: none;
-            color: #777;
-            padding: 0.5rem 1rem;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: var(--transition);
-            height: auto;
-            width: auto;
-        }
-
-        .unit-toggle button.active {
-            background: var(--primary);
-            color: #fff;
-        }
-
-        .input-group {
-            margin-bottom: 2rem;
-            transform: translateZ(20px);
-        }
-
-        label {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #777;
-            display: block;
-            margin-bottom: 0.8rem;
-            transform: translateZ(10px);
-        }
-
-        .dimensions {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-        }
-
-        input {
-            width: 100%;
-            padding: 1.2rem;
-            background: rgba(255, 255, 255, 0.05);
-            color: #fff;
-            font-size: 1rem;
-            border: none;
-            border-radius: 15px;
-            transition: var(--transition);
-        }
-
-        input:focus {
-            outline: none;
-            background: rgba(52, 105, 93, 0.2);
-            transform: scale(1.02);
-        }
-
-        button {
-            height: 60px;
-            width: 100%;
-            padding: 1.2rem;
-            background: var(--primary);
-            color: #fff;
-            border: none;
-            border-radius: 15px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            transform: translateZ(30px);
-            position: relative;
-            overflow: hidden;
-        }
-
-        button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 300%;
-            height: 300%;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 50%);
-            transform: translate(-50%, -50%) scale(0);
-            transition: transform 1s;
-        }
-
-        button:hover::before {
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        .notification {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%) translateY(-100px);
-            background: rgba(52, 105, 93, 0.9);
-            padding: 1rem 2rem;
-            border-radius: 99px;
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
-            z-index: 1000;
-            opacity: 0;
-        }
-
-        .notification.show {
-            transform: translateX(-50%) translateY(0);
-            opacity: 1;
-        }
-
-        #result {
-            margin-top: 2rem;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        #result.show {
-            opacity: 1;
-        }
-
-        .result-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 1.2rem;
-            border-radius: 15px;
-            margin-bottom: 1rem;
-            transform: translateX(50px);
-            opacity: 0;
-            transition: var(--transition);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .result-item.show {
-            transform: translateX(0);
-            opacity: 1;
-        }
-
-        .result-value {
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--primary);
-        }
-
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-        
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
-
-        @media (max-width: 480px) {
-            .calculator {
-                padding: 2rem 1.5rem;
-            }
-            
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            input {
-                padding: 1rem;
-            }
-            
-            .dimensions {
-                gap: 0.8rem;
-            }
-        }
-
-        @media (pointer: fine) {
-            .calculator:hover {
-                transform: 
-                    rotateX(calc(var(--rotateX) * 1deg)) 
-                    rotateY(calc(var(--rotateY) * 1deg));
-            }
-        }
-    </style>
-</head>
-<body>
-   <div id="notification" class="notification"></div>
-    <div id="root"></div>
-
-    <script type="text/babel">
-        // Constants
-        const RATES = {
-            rate: 10000,
-            handling: 5000,
-            volumeDivisor: 366
-        };
-
-        // Main App Component
-        const App = () => {
-            const [units, setUnits] = React.useState('metric');
-            const [inputs, setInputs] = React.useState({
-                weight: '',
-                length: '',
-                width: '',
-                height: ''
-            });
-
-            // Mount effect for 3D animation
-            React.useEffect(() => {
-                const calculator = document.querySelector('.calculator');
-                if (calculator) {
-                    const handleMouseMove = (e) => {
-                        const rect = calculator.getBoundingClientRect();
-                        const x = e.clientX - rect.left;
-                        const y = e.clientY - rect.top;
-                        
-                        const centerX = rect.width / 2;
-                        const centerY = rect.height / 2;
-                        
-                        const rotateY = ((x - centerX) / centerX) * 5;
-                        const rotateX = ((y - centerY) / centerY) * 5;
-
-                        calculator.style.setProperty('--rotateX', -rotateX);
-                        calculator.style.setProperty('--rotateY', rotateY);
-                        calculator.style.setProperty('--x', `${x}px`);
-                        calculator.style.setProperty('--y', `${y}px`);
-                    };
-
-                    calculator.addEventListener('mousemove', handleMouseMove);
-                    return () => calculator.removeEventListener('mousemove', handleMouseMove);
-                }
-            }, []);
-
-            const showNotification = (message) => {
-                const notification = document.getElementById('notification');
-                notification.textContent = message;
-                notification.classList.add('show');
-                setTimeout(() => notification.classList.remove('show'), 3000);
-            };
-
-            const handleInputChange = (e) => {
-                const { id, value } = e.target;
-                const sanitizedValue = value.replace(/[^0-9.]/g, '');
-                const parts = sanitizedValue.split('.');
-                const cleanValue = parts.length > 2 ? parts[0] + '.' + parts.slice(1).join('') : sanitizedValue;
-                const finalValue = cleanValue.includes('.') 
-                    ? cleanValue.split('.')[0] + '.' + cleanValue.split('.')[1].slice(0, 2)
-                    : cleanValue;
-
-                setInputs(prev => ({
-                    ...prev,
-                    [id]: finalValue
-                }));
-            };
-
-            const calculate = () => {
-                if (Object.values(inputs).some(val => !val)) {
-                    showNotification('يرجى ملء جميع الحقول');
-                    return;
-                }
-
-                const weightInLbs = units === 'metric' 
-                    ? parseFloat(inputs.weight) * 2.20462 
-                    : parseFloat(inputs.weight);
-
-                const dimensionsInInches = {
-                    length: units === 'metric' ? parseFloat(inputs.length) * 0.393701 : parseFloat(inputs.length),
-                    width: units === 'metric' ? parseFloat(inputs.width) * 0.393701 : parseFloat(inputs.width),
-                    height: units === 'metric' ? parseFloat(inputs.height) * 0.393701 : parseFloat(inputs.height)
-                };
-
-                const totalDimensionsInInches = dimensionsInInches.length + dimensionsInInches.width + dimensionsInInches.height;
-                let volumetricWeight = 0;
-
-                if (totalDimensionsInInches > 15) {
-                    const volumeInInches = dimensionsInInches.length * dimensionsInInches.width * dimensionsInInches.height;
-                    volumetricWeight = volumeInInches / RATES.volumeDivisor;
-                }
-
-                const chargeableWeight = Math.max(weightInLbs, volumetricWeight);
-                const baseCost = chargeableWeight * RATES.rate;
-                const totalCost = Math.round(baseCost + RATES.handling);
-
-                const resultDiv = document.getElementById('result');
-                resultDiv.innerHTML = `
-                    <div class="result-item">
-                        <span>${units === 'metric' ? 'الوزن بالكيلوغرام' : 'الوزن بالباوند'}</span>
-                        <span class="result-value">${parseFloat(inputs.weight).toFixed(2)} ${units === 'metric' ? 'كغم' : 'باوند'}</span>
-                    </div>
-                    <div class="result-item">
-                        <span>${units === 'metric' ? 'الوزن بالباوند' : 'الوزن بالكيلوغرام'}</span>
-                        <span class="result-value">${units === 'metric' ? weightInLbs.toFixed(2) : (weightInLbs / 2.20462).toFixed(2)} ${units === 'metric' ? 'باوند' : 'كغم'}</span>
-                    </div>
-                    <div class="result-item">
-                        <span>${units === 'metric' ? 'الأبعاد بالسنتيمتر' : 'الأبعاد بالإنش'}</span>
-                        <span class="result-value">${inputs.length} × ${inputs.width} × ${inputs.height} ${units === 'metric' ? 'سم' : 'إنش'}</span>
-                    </div>
-                    <div class="result-item">
-                        <span>${units === 'metric' ? 'الأبعاد بالإنش' : 'الأبعاد بالسنتيمتر'}</span>
-                        <span class="result-value">
-                            ${units === 'metric' 
-                                ? `${dimensionsInInches.length.toFixed(1)} × ${dimensionsInInches.width.toFixed(1)} × ${dimensionsInInches.height.toFixed(1)} إنش`
-                                : `${(dimensionsInInches.length / 0.393701).toFixed(1)} × ${(dimensionsInInches.width / 0.393701).toFixed(1)} × ${(dimensionsInInches.height / 0.393701).toFixed(1)} سم`}
-                        </span>
-                    </div>
-                    <div class="result-item">
-                        <span>مجموع الأبعاد بالإنش</span>
-                        <span class="result-value">${totalDimensionsInInches.toFixed(1)} إنش</span>
-                    </div>
-                    ${volumetricWeight > 0 ? `
-                        <div class="result-item">
-                            <span>الوزن الحجمي</span>
-                            <span class="result-value">${volumetricWeight.toFixed(2)} باوند</span>
-                        </div>
-                        <div class="result-item">
-                            <span>الوزن المحتسب</span>
-                            <span class="result-value">${chargeableWeight.toFixed(2)} باوند</span>
-                        </div>
-                    ` : ''}
-                    <div class="result-item">
-                        <span>رسوم الشحن</span>
-                        <span class="result-value">${Math.round(baseCost).toLocaleString('ar-IQ')} د.ع</span>
-                    </div>
-                    <div class="result-item">
-                        <span>رسوم اخرى</span>
-                        <span class="result-value">${RATES.handling.toLocaleString('ar-IQ')} د.ع</span>
-                    </div>
-                    <div class="result-item highlight">
-                        <span>التكلفة الإجمالية</span>
-                        <span class="result-value">${totalCost.toLocaleString('ar-IQ')} د.ع</span>
-                    </div>
-                `;
-                
-                resultDiv.classList.add('show');
-                setTimeout(() => {
-                    document.querySelectorAll('.result-item').forEach((item, index) => {
-                        setTimeout(() => item.classList.add('show'), index * 50);
-                    });
-                }, 100);
-            };
-
-            return (
-                <div className="container">
-                    <div className="calculator">
-                        <h1>U ✨ T ⭐ S</h1>
-                        
-                        <div className="unit-toggle">
-                            <button 
-                                className={units === 'metric' ? 'active' : ''} 
-                                onClick={() => setUnits('metric')}
-                            >
-                                كغم / سم
-                            </button>
-                            <button 
-                                className={units === 'imperial' ? 'active' : ''} 
-                                onClick={() => setUnits('imperial')}
-                            >
-                                باوند / إنش
-                            </button>
-                        </div>
-
-                        <div className="input-group">
-                            <label>{units === 'metric' ? 'الوزن (كغم)' : 'الوزن (باوند)'}</label>
-                            <input 
-                                type="number" 
-                                id="weight"
-                                value={inputs.weight}
-                                onChange={handleInputChange}
-                                min="0.1" 
-                                step="0.1" 
-                                placeholder="ادخل الوزن"
-                            />
-                        </div>
-
-                        <div className="input-group">
-                            <label>{units === 'metric' ? 'الأبعاد (سم)' : 'الأبعاد (إنش)'}</label>
-                            <div className="dimensions">
-                                <input 
-                                    type="number" 
-                                    id="length"
-                                    value={inputs.length}
-                                    onChange={handleInputChange}
-                                    min="1" 
-                                    placeholder="الطول"
-                                />
-                                <input 
-                                    type="number" 
-                                    id="width"
-                                    value={inputs.width}
-                                    onChange={handleInputChange}
-                                    min="1" 
-                                    placeholder="العرض"
-                                />
-                                <input 
-                                    type="number" 
-                                    id="height"
-                                    value={inputs.height}
-                                    onChange={handleInputChange}
-                                    min="1" 
-                                    placeholder="الارتفاع"
-                                />
-                            </div>
-                        </div>
-
-                        <button onClick={calculate}>احسب التكلفة <i class="fa-duotone fa-solid fa-scale-unbalanced"></i></button>
-
-                        <div id="result"></div>
-                    </div>
-                </div>
-            );
-        };
-
-        // Render the app
-        ReactDOM.render(<App />, document.getElementById('root'));
-    </script>
-
-<script>
-    if (window.top === window.self) {
-        window.location.href = "https://UTS-bit.github.io/"; 
+      /* Custom Variables */
+      --transition: var(--md-sys-motion-duration-medium-1) ease-in-out;
+      --button-hover-scale: 1.05;
     }
-</script>
+
+    /* General Styles */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      background-color: var(--md-sys-color-background);
+      color: var(--md-sys-color-on-background);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: var(--md-sys-spacing-medium);
+      overflow-x: hidden;
+    }
+
+    main {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: var(--md-sys-spacing-xxlarge);
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 700px;
+    }
+
+    /* Calculator Card */
+    .calculator {
+      background-color: var(--md-sys-color-surface);
+      border-radius: var(--md-sys-shape-large);
+      padding: var(--md-sys-spacing-large);
+      transition: var(--transition);
+      animation: fadeIn 0.5s ease-in-out;
+      position: relative;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Header */
+    h1 {
+      font-size: var(--md-sys-typescale-headline-medium-font-size);
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: var(--md-sys-spacing-large);
+      color: var(--md-sys-color-primary);
+      animation: slideInDown 0.5s ease-in-out;
+    }
+
+    @keyframes slideInDown {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Unit Toggle */
+    .unit-toggle {
+      display: flex;
+      justify-content: center;
+      margin-bottom: var(--md-sys-spacing-large);
+      border-radius: var(--md-sys-shape-medium);
+      overflow: hidden;
+      animation: slideInLeft 0.5s ease-in-out;
+    }
+
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .unit-toggle button {
+      background-color: transparent;
+      border: none;
+      color: var(--md-sys-color-on-surface-variant);
+      padding: var(--md-sys-spacing-small) var(--md-sys-spacing-medium);
+      font-size: var(--md-sys-typescale-body-medium-font-size);
+      cursor: pointer;
+      transition: var(--transition);
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .unit-toggle button.active {
+      background-color: var(--md-sys-color-primary);
+      color: var(--md-sys-color-on-primary);
+    }
+
+    /* Input Group */
+    .input-group {
+      margin-bottom: var(--md-sys-spacing-large);
+      animation: fadeInUp 0.5s ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: var(--md-sys-spacing-small);
+      font-size: var(--md-sys-typescale-title-medium-font-size);
+      color: var(--md-sys-color-on-surface-variant);
+    }
+
+    /* Dimensions Grid */
+    .dimensions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: var(--md-sys-spacing-small);
+    }
+
+    /* Input Field */
+    input {
+      width: 100%;
+      padding: var(--md-sys-spacing-medium);
+      background-color: var(--md-sys-color-surface-variant);
+      color: var(--md-sys-color-on-surface);
+      border: none;
+      border-radius: var(--md-sys-shape-small);
+      font-size: var(--md-sys-typescale-body-large-font-size);
+      transition: var(--transition);
+    }
+
+    input:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px var(--md-sys-color-primary);
+    }
+
+    /* Button */
+    button {
+      width: 100%;
+      padding: var(--md-sys-spacing-medium) var(--md-sys-spacing-large);
+      background-color: var(--md-sys-color-primary);
+      color: var(--md-sys-color-on-primary);
+      border: none;
+      border-radius: var(--md-sys-shape-medium);
+      font-size: var(--md-sys-typescale-title-medium-font-size);
+      font-weight: 500;
+      cursor: pointer;
+      transition: transform var(--transition), background-color var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--md-sys-spacing-small);
+      transform-origin: center;
+    }
+
+    button:hover {
+      
+      transform: scale(var(--button-hover-scale));
+    }
+
+    /* Notification */
+    .notification {
+      position: fixed;
+      top: var(--md-sys-spacing-medium);
+      left: 50%;
+      transform: translateX(-50%) translateY(-150%);
+      background-color: #1B1B1F;
+      color: var(--md-sys-color-on-secondary-container);
+      padding: var(--md-sys-spacing-small) var(--md-sys-spacing-large);
+      border-radius: var(--md-sys-shape-extra-large);
+      box-shadow: 0 var(--md-sys-elevation-2) var(--md-sys-elevation-4) rgba(0, 0, 0, 0.3);
+      transition: transform var(--transition), opacity var(--transition);
+      z-index: 100;
+      opacity: 0;
+      font-size: var(--md-sys-typescale-body-medium-font-size);
+    }
+
+    .notification.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* Result */
+    #result {
+      margin-top: var(--md-sys-spacing-large);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    #result.show {
+      opacity: 1;
+    }
+
+    .result-item {
+      background-color: var(--md-sys-color-surface-variant);
+      padding: var(--md-sys-spacing-medium);
+      border-radius: var(--md-sys-shape-small);
+      margin-bottom: var(--md-sys-spacing-small);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transform: translateX(50px);
+      opacity: 0;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+
+    .result-item.show {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .result-item span:first-child {
+      color: #000;
+      font-size: var(--md-sys-typescale-body-medium-font-size);
+    }
+
+    .result-value {
+      font-weight: 500;
+      font-size: var(--md-sys-typescale-body-large-font-size);
+      color: var(--md-sys-color-primary);
+    }
+
+    .result-item.highlight {
+      background-color: var(--md-sys-color-primary-container);
+      color: var(--md-sys-color-on-primary-container);
+    }
+
+    .result-item.highlight .result-value {
+      color: #000;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: var(--md-sys-spacing-xlarge);
+      padding: var(--md-sys-spacing-medium);
+      font-size: var(--md-sys-typescale-body-small-font-size);
+      color: var(--md-sys-color-outline);
+      animation: slideInUp 0.5s ease-in-out;
+    }
+
+    @keyframes slideInUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Utility Classes */
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+
+    /* Media Queries */
+    @media (max-width: 600px) {
+      .calculator {
+        padding: var(--md-sys-spacing-medium);
+      }
+
+      h1 {
+        font-size: var(--md-sys-typescale-headline-small-font-size);
+      }
+
+      input {
+        padding: var(--md-sys-spacing-small);
+        font-size: var(--md-sys-typescale-body-medium-font-size);
+      }
+
+      .dimensions {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: var(--md-sys-spacing-xsmall);
+      }
+
+      button {
+        font-size: var(--md-sys-typescale-body-large-font-size);
+        padding: var(--md-sys-spacing-small) var(--md-sys-spacing-medium);
+      }
+
+      main {
+        padding: var(--md-sys-spacing-large);
+      }
+    }
+
+    /* Hide number input arrows */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    /* Settings Icon and Dropdown */
+    .settings-container {
+      position: absolute;
+      top: -50px;
+      left: -32px;
+      z-index: 20; /* Ensure it's above other elements */
+    }
+
+    .settings-button {
+      background: none;
+      border: none;
+      color: var(--md-sys-color-on-surface-variant);
+      cursor: pointer;
+      font-size: 24px;
+      transition: color var(--transition), transform var(--transition);
+      transform-origin: center; /* Ensure scaling from the center */
+    }
+
+    .settings-button:hover {
+      transform: scale(1.1);
+    }
+
+    .settings-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: var(--md-sys-color-surface);
+      border-radius: var(--md-sys-shape-small);
+      box-shadow: 0 var(--md-sys-elevation-2) var(--md-sys-elevation-4) rgba(0, 0, 0, 0.2);
+      padding: var(--md-sys-spacing-small);
+      min-width: 200px;
+      display: none;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity var(--transition), transform var(--transition), display 0s var(--transition);
+      z-index: 10;
+    }
+
+    .settings-dropdown.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity var(--transition), transform var(--transition), display 0s;
+    }
+
+    .settings-dropdown button {
+      width: 100%;
+      padding: var(--md-sys-spacing-small);
+      text-align: right;
+      background: none;
+      border: none;
+      color: var(--md-sys-color-on-surface);
+      cursor: pointer;
+      border-radius: var(--md-sys-shape-small);
+      transition: background-color var(--transition), color var(--transition);
+    }
+
+    .settings-dropdown button:hover {
+      background-color: var(--md-sys-color-surface-variant);    
+      color: var(--md-sys-color-primary);
+    }
+
+    /* Slide-in Animation for Settings Dropdown */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .settings-dropdown.show {
+      display: block;
+      animation: slideIn 0.3s ease-out forwards;
+    }
+
+    /* Fade-out Animation for Settings Dropdown */
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      to {
+        opacity: 0;
+        transform: translateY(-10px);
+        display: none;
+      }
+    }
+
+    .settings-dropdown:not(.show) {
+      animation: fadeOut 0.2s ease-in forwards;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="notification" class="notification"></div>
+  <main>
+    <div id="root"></div>
+  </main>
+
+  <footer>
+  </footer>
+
+  <script type="text/babel">
+    // Constants
+    const RATES = {
+      rate: 10000,
+      handling: 5000,
+      volumeDivisor: 366
+    };
+
+    // Main App Component
+    const App = () => {
+      const [units, setUnits] = React.useState(() => {
+        const storedUnits = localStorage.getItem('units');
+        return storedUnits || 'metric';
+      });
+      const [inputs, setInputs] = React.useState({
+        weight: '',
+        length: '',
+        width: '',
+        height: ''
+      });
+      const [showSettings, setShowSettings] = React.useState(false);
+      const [showOnlyPrice, setShowOnlyPrice] = React.useState(() => {
+        const storedShowOnlyPrice = localStorage.getItem('showOnlyPrice');
+        return storedShowOnlyPrice === 'true' ? true : false;
+      });
+
+      React.useEffect(() => {
+        localStorage.setItem('units', units);
+        localStorage.setItem('showOnlyPrice', showOnlyPrice);
+      }, [units, showOnlyPrice]);
+
+      const showNotification = (message) => {
+        const notification = document.getElementById('notification');
+        notification.textContent = message;
+        notification.classList.add('show');
+        setTimeout(() => notification.classList.remove('show'), 3000);
+      };
+
+      const handleInputChange = (e) => {
+        const { id, value } = e.target;
+        const sanitizedValue = value.replace(/[^0-9.]/g, '');
+        const parts = sanitizedValue.split('.');
+        const cleanValue = parts.length > 2 ? parts[0] + '.' + parts.slice(1).join('') : sanitizedValue;
+        const finalValue = cleanValue.includes('.')
+          ? cleanValue.split('.')[0] + '.' + cleanValue.split('.')[1].slice(0, 2)
+          : cleanValue;
+
+        setInputs(prev => ({
+          ...prev,
+          [id]: finalValue
+        }));
+      };
+
+      const calculate = () => {
+        if (Object.values(inputs).some(val => !val)) {
+          showNotification('يرجى ملء جميع الحقول');
+          return;
+        }
+
+        const weightInLbs = units === 'metric'
+          ? parseFloat(inputs.weight) * 2.20462
+          : parseFloat(inputs.weight);
+
+        const dimensionsInInches = {
+          length: units === 'metric' ? parseFloat(inputs.length) * 0.393701 : parseFloat(inputs.length),
+          width: units === 'metric' ? parseFloat(inputs.width) * 0.393701 : parseFloat(inputs.width),
+          height: units === 'metric' ? parseFloat(inputs.height) * 0.393701 : parseFloat(inputs.height)
+        };
+
+        const totalDimensionsInInches = dimensionsInInches.length + dimensionsInInches.width + dimensionsInInches.height;
+        let volumetricWeight = 0;
+
+        if (totalDimensionsInInches > 15) {
+          const volumeInInches = dimensionsInInches.length * dimensionsInInches.width * dimensionsInInches.height;
+          volumetricWeight = volumeInInches / RATES.volumeDivisor;
+        }
+
+        const chargeableWeight = Math.max(weightInLbs, volumetricWeight);
+        const baseCost = chargeableWeight * RATES.rate;
+        const totalCost = Math.round(baseCost + RATES.handling);
+
+        const resultDiv = document.getElementById('result');
+
+        let resultHTML = '';
+
+        if (showOnlyPrice) {
+          resultHTML = `
+                        <div class="result-item highlight">
+                            <span>التكلفة الإجمالية</span>
+                            <span class="result-value">${totalCost.toLocaleString('ar-IQ')} د.ع</span>
+                        </div>
+                    `;
+        } else {
+          resultHTML = `
+                        <div class="result-item">
+                            <span>${units === 'metric' ? 'الوزن بالكيلوغرام' : 'الوزن بالباوند'}</span>
+                            <span class="result-value">${parseFloat(inputs.weight).toFixed(2)} ${units === 'metric' ? 'كغم' : 'باوند'}</span>
+                        </div>
+                        <div class="result-item">
+                            <span>${units === 'metric' ? 'الوزن بالباوند' : 'الوزن بالكيلوغرام'}</span>
+                            <span class="result-value">${units === 'metric' ? weightInLbs.toFixed(2) : (weightInLbs / 2.20462).toFixed(2)} ${units === 'metric' ? 'باوند' : 'كغم'}</span>
+                        </div>
+                        <div class="result-item">
+                            <span>${units === 'metric' ? 'الأبعاد بالسنتيمتر' : 'الأبعاد بالإنش'}</span>
+                            <span class="result-value">${inputs.length} × ${inputs.width} × ${inputs.height} ${units === 'metric' ? 'سم' : 'إنش'}</span>
+                        </div>
+                        <div class="result-item">
+                            <span>${units === 'metric' ? 'الأبعاد بالإنش' : 'الأبعاد بالسنتيمتر'}</span>
+                            <span class="result-value">
+                                ${units === 'metric'
+              ? `${dimensionsInInches.length.toFixed(1)} × ${dimensionsInInches.width.toFixed(1)} × ${dimensionsInInches.height.toFixed(1)} إنش`
+              : `${(dimensionsInInches.length / 0.393701).toFixed(1)} × ${(dimensionsInInches.width / 0.393701).toFixed(1)} × ${(dimensionsInInches.height / 0.393701).toFixed(1)} سم`}
+                            </span>
+                        </div>
+                        <div class="result-item">
+                            <span>مجموع الأبعاد بالإنش</span>
+                            <span class="result-value">${totalDimensionsInInches.toFixed(1)} إنش</span>
+                        </div>
+                        ${volumetricWeight > 0 ? `
+                            <div class="result-item">
+                                <span>الوزن الحجمي</span>
+                                <span class="result-value">${volumetricWeight.toFixed(2)} باوند</span>
+                            </div>
+                            <div class="result-item">
+                                <span>الوزن المحتسب</span>
+                                <span class="result-value">${chargeableWeight.toFixed(2)} باوند</span>
+                            </div>
+                        ` : ''}
+                        <div class="result-item">
+                            <span>رسوم الشحن</span>
+                            <span class="result-value">${Math.round(baseCost).toLocaleString('ar-IQ')} د.ع</span>
+                        </div>
+                        <div class="result-item">
+                            <span>رسوم اخرى</span>
+                            <span class="result-value">${RATES.handling.toLocaleString('ar-IQ')} د.ع</span>
+                        </div>
+                        <div class="result-item highlight">
+                            <span>التكلفة الإجمالية</span>
+                            <span class="result-value">${totalCost.toLocaleString('ar-IQ')} د.ع</span>
+                        </div>
+                    `;
+        }
+
+        resultDiv.innerHTML = resultHTML;
+
+        resultDiv.classList.add('show');
+        setTimeout(() => {
+          document.querySelectorAll('.result-item').forEach((item, index) => {
+            setTimeout(() => item.classList.add('show'), index * 50);
+          });
+        }, 100);
+      };
+
+      const toggleSettings = () => {
+        setShowSettings(prev => !prev);
+      };
+
+      const handleShowOnlyPriceChange = () => {
+        setShowOnlyPrice(prev => !prev);
+        toggleSettings();
+      };
+
+      const handleUnitsChange = (newUnits) => {
+        setUnits(newUnits);
+      };
+
+      return (
+        <div className="container">
+          <div className="calculator">
+            <div className="settings-container">
+              <button className="settings-button" onClick={toggleSettings}>
+                <span class="material-symbols-outlined">
+                  settings
+                </span>
+              </button>
+              <div className={`settings-dropdown ${showSettings ? 'show' : ''}`}>
+                <button onClick={handleShowOnlyPriceChange}>
+                  {showOnlyPrice ? 'إظهار جميع التفاصيل' : 'إظهار السعر فقط'}
+                </button>
+              </div>
+            </div>
+            <h1></h1>
+
+            <div className="unit-toggle">
+              <button
+                className={units === 'metric' ? 'active' : ''}
+                onClick={() => handleUnitsChange('metric')}
+              >
+                كغم / سم
+              </button>
+              <button
+                className={units === 'imperial' ? 'active' : ''}
+                onClick={() => handleUnitsChange('imperial')}
+              >
+                باوند / إنش
+              </button>
+            </div>
+
+            <div className="input-group">
+              <label>{units === 'metric' ? 'الوزن (كغم)' : 'الوزن (باوند)'}</label>
+              <input
+                type="number"
+                id="weight"
+                value={inputs.weight}
+                onChange={handleInputChange}
+                min="0.1"
+                step="0.1"
+                placeholder="ادخل الوزن"
+              />
+            </div>
+
+            <div className="input-group">
+              <label>{units === 'metric' ? 'الأبعاد (سم)' : 'الأبعاد (إنش)'}</label>
+              <div className="dimensions">
+                <input
+                  type="number"
+                  id="length"
+                  value={inputs.length}
+                  onChange={handleInputChange}
+                  min="1"
+                  placeholder="الطول"
+                />
+                <input
+                  type="number"
+                  id="width"
+                  value={inputs.width}
+                  onChange={handleInputChange}
+                  min="1"
+                  placeholder="العرض"
+                />
+                <input
+                  type="number"
+                  id="height"
+                  value={inputs.height}
+                  onChange={handleInputChange}
+                  min="1"
+                  placeholder="الارتفاع"
+                />
+              </div>
+            </div>
+
+            <button onClick={calculate}>
+              <span class="material-symbols-outlined">
+                calculate
+              </span>
+              احسب التكلفة
+            </button>
+
+            <div id="result"></div>
+          </div>
+        </div>
+      );
+    };
+
+    // Render the app
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
 </body>
+
 </html>
