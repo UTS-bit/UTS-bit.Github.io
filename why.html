@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ليش؟</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <style>
+    :root {
+      --md-sys-color-primary: #006a6a;
+      --md-sys-color-on-primary: #ffffff;
+      --md-sys-color-primary-container: #6ff7f6;
+      --md-sys-color-on-primary-container: #002020;
+      
+      --md-sys-color-secondary: #4a6363;
+      --md-sys-color-on-secondary: #ffffff;
+      --md-sys-color-secondary-container: #cce8e7;
+      --md-sys-color-on-secondary-container: #051f1f;
+      
+      --md-sys-color-tertiary: #4b5f7e;
+      --md-sys-color-on-tertiary: #ffffff;
+      --md-sys-color-tertiary-container: #d3e3ff;
+      --md-sys-color-on-tertiary-container: #061c36;
+      
+      --md-sys-color-surface: #fafdfc;
+      --md-sys-color-on-surface: #191c1c;
+      --md-sys-color-surface-variant: #dae5e4;
+      --md-sys-color-on-surface-variant: #3f4948;
+      
+      --md-sys-color-error: #ba1a1a;
+      --md-sys-color-on-error: #ffffff;
+      --md-sys-color-error-container: #ffdad6;
+      --md-sys-color-on-error-container: #410002;
+      --md-sys-typescale-display-large-font-family: 'Roboto', sans-serif;
+      --md-sys-typescale-display-large-font-weight: 400;
+      --md-sys-typescale-display-large-font-size: 57px;
+      --md-sys-typescale-display-large-line-height: 64px;
+      --md-sys-typescale-display-large-letter-spacing: -0.25px;
+      
+      --md-sys-typescale-display-medium-font-family: 'Roboto', sans-serif;
+      --md-sys-typescale-display-medium-font-weight: 400;
+      --md-sys-typescale-display-medium-font-size: 45px;
+      --md-sys-typescale-display-medium-line-height: 52px;
+      
+      --md-sys-typescale-headline-large-font-family: 'Roboto', sans-serif;
+      --md-sys-typescale-headline-large-font-weight: 400;
+      --md-sys-typescale-headline-large-font-size: 32px;
+      --md-sys-typescale-headline-large-line-height: 40px;
+      
+      --md-sys-typescale-headline-medium-font-family: 'Roboto', sans-serif;
+      --md-sys-typescale-headline-medium-font-weight: 400;
+      --md-sys-typescale-headline-medium-font-size: 28px;
+      --md-sys-typescale-headline-medium-line-height: 36px;
+      
+      --md-sys-typescale-body-large-font-family: 'Roboto', sans-serif;
+      --md-sys-typescale-body-large-font-weight: 400;
+      --md-sys-typescale-body-large-font-size: 16px;
+      --md-sys-typescale-body-large-line-height: 24px;
+      --md-sys-typescale-body-large-letter-spacing: 0.5px;
+      
+      --md-sys-typescale-body-medium-font-family: 'Roboto', sans-serif;
+      --md-sys-typescale-body-medium-font-weight: 400;
+      --md-sys-typescale-body-medium-font-size: 14px;
+      --md-sys-typescale-body-medium-line-height: 20px;
+      --md-sys-typescale-body-medium-letter-spacing: 0.25px;
+      
+      --md-sys-shape-corner-extra-small: 4px;
+      --md-sys-shape-corner-small: 8px;
+      --md-sys-shape-corner-medium: 12px;
+      --md-sys-shape-corner-large: 16px;
+      --md-sys-shape-corner-extra-large: 28px;
+      
+      --md-sys-elevation-level1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+      --md-sys-elevation-level2: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
+      --md-sys-elevation-level3: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 8px 3px rgba(0, 0, 0, 0.15);
+    }
+    
+    body {
+      font-family: var(--md-sys-typescale-body-large-font-family);
+      background-color: #fff;
+      color: var(--md-sys-color-on-surface);
+      line-height: var(--md-sys-typescale-body-large-line-height);
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+    
+    .top-app-bar {
+      background-color: var(--md-sys-color-primary);
+      color: var(--md-sys-color-on-primary);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      box-shadow: var(--md-sys-elevation-level2);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    
+    .top-app-bar h1 {
+      font-size: var(--md-sys-typescale-headline-medium-font-size);
+      font-weight: var(--md-sys-typescale-headline-medium-font-weight);
+      margin: 0;
+      line-height: var(--md-sys-typescale-headline-medium-line-height);
+    }
+    
+    .hero {
+      background-color: #000;
+      color: var(--md-sys-color-on-primary-container);
+      padding: 64px 16px;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    
+    .hero h2 {
+      font-size: var(--md-sys-typescale-display-medium-font-size);
+      font-weight: var(--md-sys-typescale-display-medium-font-weight);
+      margin: 0 0 16px 0;
+      line-height: var(--md-sys-typescale-display-medium-line-height);
+    }
+    
+    .hero p {
+      font-size: var(--md-sys-typescale-body-large-font-size);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    
+    .card {
+      background-color: var(--md-sys-color-surface);
+      border-radius: var(--md-sys-shape-corner-medium);
+      overflow: hidden;
+    }
+    
+    .card:hover {
+      box-shadow: var(--md-sys-elevation-level3);
+    }
+    
+    .card-header {
+      padding: 16px;
+      background-color: var(--md-sys-color-secondary-container);
+      color: var(--md-sys-color-on-secondary-container);
+    }
+    
+    .card-header h3 {
+      font-size: var(--md-sys-typescale-headline-medium-font-size);
+      margin: 0;
+      font-weight: 500;
+    }
+    
+    .card-content {
+      padding: 16px;
+    }
+    
+    .card-image {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--md-sys-color-surface-variant);
+      color: var(--md-sys-color-on-surface-variant);
+    }
+    
+    .icon-placeholder {
+      font-size: 48px;
+    }
+    
+    .features {
+      background-color: #34695d;
+      padding: 48px 16px;
+      margin-bottom: 48px;
+      border-radius: 40px;
+    }
+    
+    .features h2 {
+      font-size: var(--md-sys-typescale-headline-large-font-size);
+      text-align: center;
+      margin-bottom: 32px;
+      color: #fff;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+    
+    .feature-item {
+      background-color: var(--md-sys-color-surface);
+      padding: 24px;
+      border-radius: var(--md-sys-shape-corner-medium);
+    }
+    
+    .feature-item h3 {
+      color: #000;
+      margin-top: 0;
+      font-size: 20px;
+    }
+    
+    .comparison {
+      margin-bottom: 48px;
+    }
+    
+    .comparison h2 {
+      font-size: var(--md-sys-typescale-headline-large-font-size);
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      box-shadow: var(--md-sys-elevation-level1);
+      border-radius: var(--md-sys-shape-corner-medium);
+      overflow: hidden;
+    }
+    
+    th {
+      background-color: var(--md-sys-color-primary);
+      color: var(--md-sys-color-on-primary);
+      padding: 16px;
+      text-align: left;
+      font-weight: 500;
+    }
+    
+    td {
+      padding: 16px;
+      border-bottom: 1px solid var(--md-sys-color-surface-variant);
+    }
+    
+    tr:nth-child(even) {
+      background-color: var(--md-sys-color-surface-variant);
+      color: var(--md-sys-color-on-surface-variant);
+    }
+    
+    tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .cta {
+      background-color: var(--md-sys-color-tertiary-container);
+      color: var(--md-sys-color-on-tertiary-container);
+      padding: 48px 16px;
+      text-align: center;
+      border-radius: var(--md-sys-shape-corner-large);
+      margin-bottom: 48px;
+    }
+    
+    .cta h2 {
+      font-size: var(--md-sys-typescale-headline-large-font-size);
+      margin-bottom: 16px;
+    }
+    
+    .button {
+      display: inline-block;
+      background-color: var(--md-sys-color-primary);
+      color: var(--md-sys-color-on-primary);
+      padding: 12px 24px;
+      border-radius: var(--md-sys-shape-corner-small);
+      font-size: var(--md-sys-typescale-body-large-font-size);
+      text-decoration: none;
+      margin-top: 16px;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      box-shadow: var(--md-sys-elevation-level1);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .button:hover {
+      background-color: #005252;
+      box-shadow: var(--md-sys-elevation-level2);
+    }
+    
+    footer {
+      background-color: var(--md-sys-color-secondary);
+      color: var(--md-sys-color-on-secondary);
+      padding: 32px 16px;
+      text-align: center;
+    }
+    
+    footer p {
+      margin: 0;
+      font-size: var(--md-sys-typescale-body-medium-font-size);
+    }
+    
+    .display-large {
+      font-family: var(--md-sys-typescale-display-large-font-family);
+      font-size: var(--md-sys-typescale-display-large-font-size);
+      line-height: var(--md-sys-typescale-display-large-line-height);
+      letter-spacing: var(--md-sys-typescale-display-large-letter-spacing);
+      font-weight: var(--md-sys-typescale-display-large-font-weight);
+    }
+    
+    .headline-large {
+      font-family: var(--md-sys-typescale-headline-large-font-family);
+      font-size: var(--md-sys-typescale-headline-large-font-size);
+      line-height: var(--md-sys-typescale-headline-large-line-height);
+      font-weight: var(--md-sys-typescale-headline-large-font-weight);
+    }
+    
+    @media (max-width: 768px) {
+      .card-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero h2 {
+        font-size: 36px;
+        line-height: 44px;
+      }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .fadeIn {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+      <div class="card fadeIn">
+        <div class="card-image">
+          <div class="icon-placeholder">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b2/df/9b/b2df9b78-3a78-51e8-a3c9-c8e00b0e30e1/AppIcon_stg-0-0-1x_U007emarketing-0-8-0-85-220.png/1200x630wa.png" alt="Image" style="width: 100%; height: 200px; display: block; margin: auto;">
+          </div>
+        </div>
+        <div class="card-content">
+          <p>First Iraqi Bank (FIB) ليش كـ طريقة دفع اساسية؟ </p>
+          <p>بنك العراق الاول هو افضل بنك حالياً من ناحية سهولة الاستخدام والتسجيل و التعاملات المالية وحدود الاستعمال.</p>
+               <p>تكدر تفتح حساب وتودع اموالك من اي بطاقة عندك الى بنك العراق الاول خلال دقايق وبدون اي تعقيدات.</p>
+               <p>فـ هو طريقة الدفع الوحيدة والافضل حالياً، لعدم وجود اي طريقة اسهل واسرع او افضل</p>
+               <p>اذا ما كان عندك حساب تكدر تفتح واحد خلال دقايق وتودع فلوسك من بنكك الى بنك العراق الاول وتحولهن النة، افضل واسرع بنك طريقة حالياً</p>
+               
+        </div>
+      </div>
+    </div>
+    <div class="features">
+      <h2 class="headline-large">زين ليش ماكو اي طريقة دفع ثانية زين كاش مثلاً؟ </h2>
+      <div class="features-grid">
+        <div class="feature-item fadeIn">
+          <h3><i class=""></i> زين كاش</h3>
+          <p>محدود جداً ومزعج من ناحية التعاملات المالية.</p>
+        </div>
+        
+        <div class="feature-item fadeIn">
+          <h3><i class=""></i> كي</h3>
+          <p>محدود وغير مناسب للاستخدام التجاري.</p>
+        </div>
+        
+        <div class="feature-item fadeIn">
+          <h3><i class=""></i> محفظة اخرى؟</h3>
+          <p>ماكو محافظ اخرى بقدر شهرة ومعروفية كي و زين كاش</p>
+        </div>
+        
+        <div class="feature-item fadeIn">
+          <h3><i class=""></i> والحل؟</h3>
+          <p>تكدر تسوي حساب مصرف العراق الاول بكل سهولة وتودع اموالك فيه وتحولهن النة وهاي العملية كلها تستغرق اقل من ساعة</p>
+        </div>
+        
+        </div>
+      </div>
+    </div>
+  <script> document.addEventListener('DOMContentLoaded', function() {
+      const fadeElements = document.querySelectorAll('.fadeIn');
+      fadeElements.forEach((element, index) => {
+        setTimeout(() => {
+          element.style.opacity = '1';
+        }, index * 100);
+      });
+    });
+  </script>
+</body>
+</html>
